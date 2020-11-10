@@ -1,0 +1,33 @@
+{
+  "name": "covid19app",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.672.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-handlebars": "^4.0.4",
+    "fs": "0.0.1-security",
+    "grunt": "^1.1.0",
+    "grunt-openui5": "^0.16.0",
+    "jsonfile": "^6.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "messagebird": "^3.5.0",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.4.6",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "grunt-openui5": "^0.16.0"
+  }
+}
