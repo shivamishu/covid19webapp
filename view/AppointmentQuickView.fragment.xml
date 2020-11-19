@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<QuickViewCard class="quickViewWidth">
+		<QuickViewPage pageId="P1" header="JA Hospital" icon="sap-icon://accidental-leave" title="JA Hospital" description="Government Hospital">
+			<groups>
+				<QuickViewGroup heading="Appointment Details">
+					<elements>
+						<QuickViewGroupElement label="Appointment ID" value="20201405001" type="text"></QuickViewGroupElement>
+						<QuickViewGroupElement label="Appointment Staus" value="In process" type="text"></QuickViewGroupElement>
+						<QuickViewGroupElement label="Date" value="Thursday, May 14, 2020" type="text"></QuickViewGroupElement>
+						<QuickViewGroupElement label="Time" value="11:00 AM" type="text"></QuickViewGroupElement>
+					</elements>
+				</QuickViewGroup>
+				<QuickViewGroup heading="Contact Details">
+					<elements>
+						<QuickViewGroupElement label="Address" value="Hospital Road, Near Cancer Hills, Gwalior, M.P. Pin-Code - 474011" type="text"></QuickViewGroupElement>
+						<QuickViewGroupElement label="Phone Number" value="+91 (0751) 2403400" type="phone"></QuickViewGroupElement>
+						<QuickViewGroupElement label="Toll Free Number" value="1-800-123-4567" type="phone"></QuickViewGroupElement>
+					</elements>
+				</QuickViewGroup>
+			</groups>
+		</QuickViewPage>
+	</QuickViewCard>
+</core:FragmentDefinition>

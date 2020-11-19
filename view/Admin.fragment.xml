@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox>
+		<Table items="{ path: 'adminModel>/contacts', sorter: { path: 'street' } }">
+			<headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="Contact Traces ({redzonesModel>/citySelected})" level="H2"/>
+						<ToolbarSpacer/>
+					</content>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns>
+				<Column hAlign="Begin">
+					<Text text="Name"/>
+				</Column>
+				<Column minScreenWidth="Tablet" hAlign="Begin" demandPopin="true">
+					<Text text="Address"/>
+				</Column>
+				<Column hAlign="End">
+					<Text text="Contact Number"/>
+				</Column>
+				<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+					<Text text="COVID19 Test Report"/>
+				</Column>
+				<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+					<Text text="Confirm COVID19 Test Result"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem highlight="{= !!${adminModel>lname} ? 'Error' : 'Warning'}">
+					<cells>
+						<ObjectIdentifier title="{adminModel>fname} {adminModel>lname}"/>
+						
+                        <ObjectAttribute text="{adminModel>street}, {adminModel>city}" active="true" press="handleOpenGmaps"
+								class="sapUiTinyMarginBottom"/>
+                        <ObjectAttribute text="{adminModel>mobile_no}" active="true" press="handleEssentialPhone"
+								class="sapUiTinyMarginBottom"/>
+						<VBox>
+							<Button text="View Report" visible="{= !!${adminModel>file_url}}" icon="sap-icon://clinical-order" press="handleDownloadReport"/>
+							<Text text="Not Available" class="sapUiTinyMarginBottom" visible="{= !${adminModel>file_url}}"/>
+						</VBox>
+						<VBox>
+							<CheckBox text="{= ${adminModel>covid_result} === 'POSITIVE' || ${adminModel>result} ? 'POSITIVE' : 'NEGATIVE'}" select="handleTestResultConfirm"
+								selected="{= ${adminModel>covid_result} === 'POSITIVE' ? true : false}" visible="{= !!${adminModel>file_url}}"/>
+                            <Button text="Notify" visible="{= !${adminModel>file_url}}" press="handleSendSMS" type="Attention"/>    
+						</VBox>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</VBox>
+</core:FragmentDefinition>

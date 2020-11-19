@@ -1,0 +1,17 @@
+<mvc:View
+	controllerName="mymedicalhelpline.controller.NotFound"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+	<MessagePage
+		title="{i18n>notFound}"
+		text="{i18n>noObjectFoundTextMsg}"
+		icon="{sap-icon://document}"
+		id="page"
+		description="">
+		<customDescription>
+			<Link id="link" text="Reload" press="onLinkPressed" />
+		</customDescription>
+	</MessagePage>
+
+</mvc:View>

@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Popover
+		showHeader="false"
+		contentWidth="20rem"
+		contentHeight="auto"
+		placement="Bottom">
+           <Text wrapping="true" class="sapUiSmallMargin" text="You can search here for all the essential services in any city and get their contact details. Essential services include COVID-19 Testing Labs, Food, Grocery, Medicine Delivery options, Wellness centers, Emergency services, Donation camps, Helplines etc. List of available categories are enlisted in the below categories dropdown."/>
+        </Popover>
+</core:FragmentDefinition>

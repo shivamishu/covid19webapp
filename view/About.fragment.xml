@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns:uxap="sap.uxap" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="aboutUsDialog" stretch="{= ${device>/system/phone}}" title="COVID-19 Healthcare Assistant" type="Standard"
+		escapeHandler="onAboutUsClose" contentWidth="{= ${device>/system/phone} ? 'auto' : '60%'}" initialFocus="aboutLink"
+		contentHeight="{= ${device>/system/phone} ? '100%' : '60%'}" draggable="true" resizable="true" afterClose="onAboutUsClose">
+		<content>
+			<VBox alignItems="Center">
+				<Title id="aboutLink" text="About us" class="sapUiSmallMargin"/>
+				<VBox class="customBackground" width="96%">
+					<Label wrapping="true" class="sapUiTinyMargin"
+						text="This application's sole purpose is to increase the awareness amongst people about the COVID-19 infection by providing them a single platform – ‘COVID-19 Healthcare Assistant’ wherein they can make use of all the essential services, information and utilities to help fight this pandemic."/>
+					<Label wrapping="true" text="The application mainly provides below 6 essential services:" class="sapUiTinyMargin"/>
+					<Label wrapping="true" class="sapUiTinyMargin"
+						text="Risk Assessment: Custom(Free) Self-assessment Test to calculate potential health risk and our recommendations for the same. Find Nearby Containment or Hotspot zone(which is built based on the end-users risk assessment results and covid19 cases in that area). Search for any State's or City's current COVID-19 cases trends. Users who get the assessment result as HIGH or MEDIUM risk based on predetermined parameters get to upload the covid19 test report/result which the local admin of the area could verify and update in the database using our admin panel."/>
+					<Label wrapping="true" class="sapUiTinyMargin"
+						text="Contact Tracing: Users who get the assessment result as HIGH or MEDIUM risk get to fill in the details of the other users with whom they have come in contact within a week. Thus, every user at potential risk builds up this database and thus, we perform some computations and analytics to show the possible cluster of users at risk so that they could self-isolate themselves and even get a covid19 test. We automatically send notification to the users at risk via email/phone to inform the potential risk associated and to take preventive measures. This feature could be really helpful even for the companies who have opened/planning to open offices. Employees could use the app to take risk assessment and fill in the details if at risk. With this contact traces database built within a company and our analytics/suggestions, employees/companies could reduce the risk within the company and help contain covid19 within the company. "/>
+					<Label wrapping="true" class="sapUiTinyMargin"
+						text="Admin Panel: Different projections of the database, various views of the database and all the relevant analytics. Admins of the area or the company get to see the list of all the users at the risk, their contact details(in case need to be contacted to provide help/care), the status of the covid19 test result, provision to verify the test result based on the test report uploaded by the user. "/>
+					<Label wrapping="true" class="sapUiTinyMargin"
+						text="Essentials: Search for nearby essential services like COVID-19 Testing Labs, Food/Grocery/Medicine Delivery options, Wellness centers, Emergency services, Donation camps, Helplines etc. and get their contact details."/>
+					<Label wrapping="true" class="sapUiTinyMargin" text="Analytics: Track COVID-19 trends, highlights, updates, graphs etc."/>
+					<!-- <Label wrapping="true" class="sapUiTinyMargin"
+						text="Forum: Ask questions, raise concerns, view interesting news, view/posts videos, blogs and other details curated and answered by the registered experts or consulting external experts like Government Administration team, Doctors, Healthcare providers, Medical staffs, Area experts etc."/> -->
+					<Label wrapping="true" class="sapUiTinyMargin"
+						text="Helpline: Get the details of the Indian Government and your State’s Government Helpline Call Centers to raise concerns, get information or ask for help."/>
+					<Label wrapping="true" class="sapUiTinyMargin"
+						text="This application is completely a non-profit initiative taken by its creators and does not charge for any of its services. User data is highly secured and is never shared with any 3rd party. All the other data is collected from various sources like Google, covid19india, Bing, MoH, ICMR etc. "/>
+				</VBox>
+				<VBox class="customBackground sapUiSmallMarginTop" alignItems="Center" width="96%">
+					<Title text="Contact Details" class="sapUiSmallMargin"/>
+					<!-- <VBox alignItems="Center"> -->
+					<!-- <Label text="Shivam Shrivastav"/> -->
+					<!-- <Link text="shivam.ishu@gmail.com" press="onEmailPress"/> -->
+					<!-- </VBox> -->
+					<!-- <VBox class="sapUiTinyMargin" alignItems="Center"> -->
+					<!-- <Label text="Rishabh Singh"/> -->
+					<!-- <Link text="rishabh16993@gmail.com" press="onEmailPress"/> -->
+					<!-- </VBox> -->
+					<!-- <VBox class="sapUiTinyMargin" alignItems="Center"> -->
+					<!-- <Label text="Abhishek Shivam"/> -->
+					<!-- <Link text="abhish/ekshivam16@gmail.com" press="onEmailPress"/> -->
+					<!-- </VBox> -->
+					<VBox alignItems="Center">
+						<Link text="covid19healthcare24x7@gmail.com" press="onEmailPress"/>
+						<!-- <Link text="shivam.ishu@gmail.com" press="onEmailPress"/> -->
+					</VBox>
+				</VBox>
+				<Label wrapping="true" text="© All rights reserved." class="sapUiTinyMargin"/>
+			</VBox>
+		</content>
+		<buttons>
+			<Button id="aboutus" type="Default" text="Close" tooltip="Close" press="onAboutUsClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

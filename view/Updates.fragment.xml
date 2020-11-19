@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox busy="{diagnosisView>/updateBusy}" busyIndicatorDelay="0" class="iframe">
+		<FlexBox id="flexEmbeded" direction="Column" renderType="Div" class="sapUiSmallMargin" height="auto" width="auto">
+			<!-- <core:HTML content='&lt;div class=&quot;bingwidget&quot; data-type=&quot;covid19&quot; data-location-id=&quot;/India&quot; data-market=&quot;en-us&quot; data-language=&quot;en-us&quot;&gt;&lt;/div&gt;&lt;script src=&quot;//www.bing.com/widget/bootstrap.answer.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;' /> -->
+			<html:iframe id="bing_frame" src="https://www.bing.com/covid/local/india" frameborder="0" height="100%" width="100%"/>
+		</FlexBox>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,71 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<VBox class="sapUiSmallMarginTopBottom sapUiTinyMarginBeginEnd" visible="{diagnosisView>/showResults}">
+		<VBox direction="Column" alignItems="Center" width="100%" visible="{= ${user>/status_id} === 'HIGH'}" class="alertRed">
+			<!-- <ObjectStatus text="You are at HIGH RISK" inverted="true" class="sapUiTinyMarginTopBottom" state="Indication01" icon="sap-icon://alert"/> -->
+			<HBox class="sapUiTinyMarginTop">
+				<core:Icon class="sapUiTinyMarginEnd" src="sap-icon://alert" color="Contrast"/>
+				<Label design="Bold" text="You are at HIGH RISK" class="colorBlack"/>
+			</HBox>
+		</VBox>
+		<VBox direction="Column" alignItems="Center" width="100%" visible="{= ${user>/status_id} === 'MEDIUM'}" class="alertOrange">
+			<!-- <ObjectStatus text="You are at MODERATE RISK" inverted="true" class="sapUiTinyMarginTopBottom" state="Indication03" icon="sap-icon://alert"/> -->
+			<HBox class="sapUiTinyMarginTop">
+				<core:Icon class="sapUiTinyMarginEnd" src="sap-icon://alert" color="Contrast"/>
+				<Label design="Bold" text="You are at MODERATE RISK" class="colorBlack"/>
+			</HBox>
+		</VBox>
+		<VBox direction="Column" alignItems="Center" width="100%" visible="{= ${user>/status_id} === 'LOW'}" class="alertGreen">
+			<!-- <ObjectStatus text="You are SAFE" inverted="true" class="sapUiTinyMarginTopBottom" state="Success" icon="sap-icon://sys-enter-2"/> -->
+			<HBox class="sapUiTinyMarginTop">
+				<core:Icon class="sapUiTinyMarginEnd" src="sap-icon://alert" color="Contrast"/>
+				<Label design="Bold" text="You are SAFE" class="colorBlack"/>
+			</HBox>
+		</VBox>
+		<l:Grid hSpacing="0" defaultSpan="XL6 L6 M6 S12">
+			<VBox class="sapUiTinyMarginBeginEnd">
+			<HBox class="sapUiTinyMarginTop" justifyContent="SpaceBetween">
+				<Button id="retakesurvey" class="sapUiTinyMarginTop sapUiTinyMarginBegin" visible="{diagnosisView>/showResults}"
+					text="Reset/Retake Risk Assessment" type="Emphasized" press="handleReTakeRiskAssessment" icon="sap-icon://refresh"></Button>
+				<Button id="uploadresults" class="sapUiTinyMarginTop" visible="{diagnosisView>/showResults}"
+					text="Upload Test Report" type="Emphasized" press="hanldeUploadResultOpen"></Button>
+			</HBox>	
+				<List mode="None" headerText="Your COVID-19 risk assessment results:" class="sapUiSmallPaddingEnd sapUiTinyMarginBottom">
+					<items>
+						<StandardListItem visible="{= ${user>/status_id} === 'HIGH'}"
+							title="You are at HIGH Risk. Seek immediate medical attention and book appointment immediately." highlight="Error" type="Inactive"
+							wrapping="true"/>
+						<StandardListItem visible="{= ${user>/status_id} === 'MEDIUM'}" title="You are at MEDIUM Risk. Seek medical attention and book appointment."
+							highlight="Warning" type="Inactive" wrapping="true"/>
+						<StandardListItem visible="{= ${user>/status_id} === 'LOW'}" title="You are at LOW Risk and SAFE." highlight="Success" type="Inactive"
+							wrapping="true"/>
+						<StandardListItem visible="{= ${user>/status_id} === 'HIGH' || ${user>/status_id} === 'MEDIUM'}"
+							title="Please visit a Physician as there may be a requirement for further care."
+							highlight="{= ${user>/status_id} === 'HIGH' ? 'Error' : 'Warning'}" type="Inactive" wrapping="true"/>
+						<StandardListItem visible="{= ${user>/status_id} === 'HIGH' || ${user>/status_id} === 'MEDIUM'}" title="COVID-19 testing is needed"
+							highlight="{= ${user>/status_id} === 'HIGH' ? 'Error' : 'Warning'}" type="Inactive" wrapping="true"/>
+						<StandardListItem
+							title="Start home isolation {= ${user>/status_id} === 'HIGH' || ${user>/status_id} === 'MEDIUM' ? 'immediately' : ''} and practice social distancing."
+							highlight="Information" type="Inactive" wrapping="true"/>
+						<StandardListItem title="Monitor your symptoms and retake self assessment test after a few days." highlight="Information" type="Inactive"
+							wrapping="true"/>
+						<StandardListItem title="Follow the below preventions and precautions." highlight="Information" type="Inactive" wrapping="true"/>
+					</items>
+				</List>
+				<!-- <VBox visible="{= !${device>/system/phone}}"> -->
+					<!-- <core:Fragment fragmentName="mymedicalhelpline.view.Figures" type="XML"/> -->
+				<!-- </VBox> -->
+			</VBox>
+			<!-- <core:Fragment fragmentName="mymedicalhelpline.view.ContactTraces" type="XML"/> -->
+			
+			
+			<!-- <VBox visible="{device>/system/phone}"> -->
+				<core:Fragment fragmentName="mymedicalhelpline.view.Figures" type="XML"/>
+			<!-- </VBox> -->
+			<core:Fragment fragmentName="mymedicalhelpline.view.Redzones2" type="XML"/>
+				<core:Fragment fragmentName="mymedicalhelpline.view.StateCases" type="XML"/>
+			
+		
+			<!-- TO DOS and LINKS REMOVED -->
+		</l:Grid>
+	</VBox>
+</core:FragmentDefinition>

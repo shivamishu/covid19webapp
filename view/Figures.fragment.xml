@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<VBox class="sapMLIB customListMLIB sapUiTinyMarginBeginEnd sapUiSmallMarginTop" busy="{figuresModel>/busy}">
+		<FlexBox justifyContent="SpaceBetween" direction="{= ${device>/system/desktop} ? 'Row' : 'Column'}">
+			<Title text="COVID-19 Cases in India"/>
+			<Label wrapping="true" text="{path: 'figuresModel>/lastUpdated'}"/>
+		</FlexBox>
+		<!-- Tested cases -->
+		<VBox class="sapUiTinyMarginBottom">
+			<ObjectStatus text="Total tests conducted: {path: 'figuresModel>/tested', formatter: '.formatter.formatNumbers'}" inverted="true"
+				state="Indication05" icon="sap-icon://lab"/>
+			<HBox><ObjectStatus visible="{= ${figuresModel>/new_tested} &gt; 0}"
+				text="{path: 'figuresModel>/new_tested', formatter: '.formatter.formatNumbers'}" icon="sap-icon://arrow-top" state="Indication05"/><Label class="sapUiTinyMarginBegin" text="{figuresModel>/testLastUpdated}"/></HBox>
+		</VBox>
+		<!-- Total cases -->
+		<VBox class="sapUiTinyMarginBottom">
+			<ProgressIndicator height="1.5rem" class="sapUiTinyMarginTopBottom" percentValue="100"
+				displayValue="Total cases: {path: 'figuresModel>/totalCases', formatter: '.formatter.formatNumbers'}" showValue="true" state="None"/>
+			<ObjectStatus visible="{= ${figuresModel>/new_totalCases} &gt; 0}"
+				text="{path: 'figuresModel>/new_totalCases', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top" state="None"/>
+		</VBox>
+		<!-- <Title text="Active Cases" class="sapUiTinyMarginTop"/> -->
+		<VBox class="sapUiTinyMarginBottom">
+			<ProgressIndicator height="1.5rem" class="sapUiTinyMarginTopBottom"
+				percentValue="{parts: ['figuresModel>/activeCases', 'figuresModel>/totalCases'], formatter: '.formatter.formatPercentage'}"
+				displayValue="Active cases: {path: 'figuresModel>/activeCases', formatter: '.formatter.formatNumbers'}" showValue="true" state="Warning"/>
+			<ObjectStatus visible="{= ${figuresModel>/new_activeCases} &gt; 0}"
+				text="{path: 'figuresModel>/new_activeCases', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top" state="Warning"/>
+		</VBox>
+		<!-- <Title text="Recovered" class="sapUiTinyMarginTop"/> -->
+		<VBox class="sapUiTinyMarginBottom">
+			<ProgressIndicator height="1.5rem" class="sapUiTinyMarginTopBottom"
+				percentValue="{parts: ['figuresModel>/recovered', 'figuresModel>/totalCases'], formatter: '.formatter.formatPercentage'}"
+				displayValue="Recovered: {path: 'figuresModel>/recovered', formatter: '.formatter.formatNumbers'}" showValue="true" state="Success"/>
+			<ObjectStatus visible="{= ${figuresModel>/new_recovered} &gt; 0}"
+				text="{path: 'figuresModel>/new_recovered', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top" state="Success"/>
+		</VBox>
+		<!-- <Title text="Deaths" class="sapUiTinyMarginTop"/> -->
+		<VBox class="sapUiTinyMarginBottom">
+			<ProgressIndicator height="1.5rem" class="sapUiTinyMarginTopBottom"
+				percentValue="{parts: ['figuresModel>/deaths', 'figuresModel>/totalCases'], formatter: '.formatter.formatPercentage'}"
+				displayValue="Deaths/Deceased: {path: 'figuresModel>/deaths', formatter: '.formatter.formatNumbers'}" showValue="true" state="Error"/>
+			<ObjectStatus visible="{= ${figuresModel>/new_deaths} &gt; 0}"
+				text="{path: 'figuresModel>/new_deaths', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top" state="Error"/>
+		</VBox>
+	</VBox>
+</core:FragmentDefinition>

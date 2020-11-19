@@ -1,0 +1,50 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:fi="sap.f" xmlns:core="sap.ui.core" controllerName="mymedicalhelpline.controller.ResetView">
+	<Page title="{i18n>appTitle}" floatingFooter="false" showHeader="false" enableScrolling="true" busy="{resetView>/busy}"
+		class="sapUiRootBackground sapMShellGlobalOuterBackground">
+		<customHeader>
+			<!-- <OverflowToolbar class="customHeaderToolbar">
+				<Title text="{i18n>appTitle}"/>
+			</OverflowToolbar> -->
+		</customHeader>
+		<content>
+			<VBox class="sapUiSmallMargin" alignItems="Center">
+				<items>
+					<MessageStrip class="sapUiTinyMarginBottom" text="{resetView>/msg}" visible="{resetView>/showMsg}"
+						type="{= ${resetView>/isError} ? 'Error' : 'Success'}" showIcon="true" showCloseButton="true"/>
+					<f:SimpleForm id="resetForm" width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12"
+						labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+						singleContainerFullSize="false">
+						<f:toolbar>
+							<OverflowToolbar height="auto">
+								<Image src="img/logo.png" height="auto" width="4rem" tooltip="{i18n>appTitle}" class="borderRadius"/>
+								<Title id="logonTitle" level="H1" text="Forgot Password" textAlign="Center" titleStyle="H1"/>
+								<ToolbarSpacer/>
+							</OverflowToolbar>
+						</f:toolbar>
+						<f:content>
+							<!-- <Label/>
+							<Input id="mob" change="onMobChange"
+								value="{path: 'reset>/mobile_no', type: 'sap.ui.model.type.Integer', constraints : { minimum : 1000000000, maximum : 9999999999 }}"
+								type="Number" placeholder="{i18n>mob}" maxLength="10"/> -->
+							<Label/>
+							<Input id="newpwd1" change="onPwdChange"
+								value="{ path : 'resetView>/password', type : 'sap.ui.model.type.String', constraints : { minLength : 6, maxLength : 15 } }"
+								placeholder="{i18n>pwd}" type="Password"/>
+							<Label/>
+							<Input id="newpwd2" change="onPwdChangeConfirm"
+								value="{ path : 'resetView>/password2', type : 'sap.ui.model.type.String', constraints : { minLength : 6, maxLength : 15 } }"
+								placeholder="Confirm Password" type="Password"/>
+							<Label/>
+							<Button id="reset" type="Emphasized" text="Reset Password" press="onResetPassword"/>
+						</f:content>
+					</f:SimpleForm>
+					<HBox class="sapUiTinyMarginTopBottom">
+						<Label wrapping="true" design="Bold" text="Reload the application or Click:" textAlign="Center" class="sapUiTinyMarginEnd"/>
+						<Link press="onReloadApp" text="Sign In" emphasized="true"/>
+					</HBox>
+				</items>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

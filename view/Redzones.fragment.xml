@@ -1,0 +1,81 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<VBox>
+		<VBox busy="{redzonesModel>/busy}" class="sapUiContentPadding">
+			<HBox class="sapUiTinyMargin">
+				<core:Icon height="1.5rem" width="1.5rem" src="sap-icon://locate-me" class="sapUiTinyMarginEnd"/>
+				<Title text="Search Containment Zones"/>
+				<!-- <Button icon="sap-icon://locate-me" text="Search nearby Containment Zones" type="Emphasized" press="_checkIsNewLocation"
+					class="sapUiTinyMargin"/> -->
+				<!-- <Text text="{path: 'redzonesModel>/numberOfNearbyZones', formatter: '.formatter.formatZoneSearchNumber'}"
+					class="sapUiTinyMarginBegin customLabel"/> -->
+			</HBox>
+			<VBox height="100%" justifyContent="SpaceBetween" class="sapMLIB customListMLIB sapUiTinyMarginBegin">
+				<layoutData>
+					<FlexItemData growFactor="1" shrinkFactor="0"/>
+				</layoutData>
+				<FlexBox justifyContent="SpaceBetween" direction="{= ${device>/system/desktop} ? 'Row' : 'Column'}">
+					<ComboBox class="sapUiTinyMargin" change="onCityZoneChanged" showSecondaryValues="false" selectedKey="{redzonesModel>/citySelected}"
+						items="{redzonesModel>/cities}">
+						<items>
+							<core:ListItem key="{redzonesModel>city}" text="{redzonesModel>city}" additionalText="{redzonesModel>geocord}"/>
+						</items>
+					</ComboBox>
+					<SearchField class="sapUiTinyMargin" width="100%" value="{redzonesModel>/locality}" liveChange="handleLocalitySearch"
+						change="handleLocalitySearch" placeholder="Enter your locality" visible="{redzonesModel>/localityVisible}"/>
+				</FlexBox>
+				<Title text="{redzonesModel>/listHeaderText}"/>
+				<ScrollContainer class="customMinHeight10" width="auto" vertical="true" focusable="true">
+					<!-- headerText="{path: 'redzonesModel>/cityResults', formatter: '.formatter.formatZoneSearchNumber'}" -->
+					<List id="redList1" growing="true" growingScrollToLoad="true" growingThreshold="10" mode="None" updateFinished="redzonesUpdateFinished"
+						noDataText="No Containment zones found" items="{path: 'redzonesModel>/cityResults', sorter: { path: 'geocord', descending: false }}"
+						class="sapUiSmallPaddingEnd sapUiTinyMarginBottom">
+						<items>
+							<StandardListItem title="{redzonesModel>name}" highlight="{= !!${redzonesModel>city} ? 'Error' : 'Warning'}" type="Active"
+								press="handleOpenGmaps" wrapping="true"/>
+						</items>
+					</List>
+				</ScrollContainer>
+				<!-- <VBox class="yScroll" > -->
+				<!-- <List mode="None" noDataText="No Containment zones found" headerText="{path: 'redzonesModel>/cityResults', formatter: '.formatter.formatZoneSearchNumber'}" items="{redzonesModel>/cityResults}" class="sapUiSmallPaddingEnd sapUiTinyMarginBottom">
+					<items>
+						<StandardListItem 
+							title="{redzonesModel>name}" highlight="Error" type="Inactive"
+							wrapping="true"/>
+					</items>
+				</List>	
+				</VBox> -->
+				<!-- <f:Form editable="false" width="100%"> -->
+				<!-- <f:title>
+				<core:Title text="Total Nearby Zones: {redzonesModel>/numberOfNearbyZones}"/>
+			</f:title> -->
+				<!-- <f:layout>
+						<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4"/>
+					</f:layout> -->
+				<!-- <f:toolbar > -->
+				<!-- : {redzonesModel>/numberOfNearbyZones} -->
+				<!-- <OverflowToolbar style="Clear"> -->
+				<!-- <Title text=" Containment zones near me"/> -->
+				<!-- <ToolbarSpacer/> -->
+				<!-- icon="{= ${device>/system/phone} ? '' : 'sap-icon://locate-me'}" -->
+				<!-- <Button icon="sap-icon://locate-me" text="Search Containment zones near me" type="Emphasized" press="_checkIsNewLocation"/> -->
+				<!-- </OverflowToolbar> -->
+				<!-- </f:toolbar> -->
+				<!-- <f:formContainers>
+						<f:FormContainer formElements="{redzonesModel>/cityResults}">
+							<f:formElements>
+								<f:FormElement label="">
+									<f:fields>
+										<Text text="{redzonesModel>name}"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form> -->
+			</VBox>
+		</VBox>
+		<!-- <VBox class="sapUiSmallMarginTop" visible="{= !${diagnosisView>/showResults}}"> -->
+		<!-- <core:Fragment fragmentName="mymedicalhelpline.view.LinksAndToDos" type="XML"/> -->
+		<!-- </VBox> -->
+	</VBox>
+</core:FragmentDefinition>

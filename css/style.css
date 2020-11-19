@@ -1,0 +1,280 @@
+.loginCustomBG {
+  background-image: url("../img/background_opaque.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: solid;
+  border-radius: 2rem;
+}
+.shellBarCustom {
+  /* background-color: #eff4f9 !important; */
+}
+.customBorderRound {
+  border: solid !important;
+  border-radius: 1rem;
+  border-color: black;
+  border-width: 1px;
+  /* background-color: lightgrey; */
+}
+.tileLayout {
+  float: left;
+}
+.customTileLayout {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.alertRed {
+  background-color: #f55;
+  border-radius: 1rem;
+}
+.alertOrange {
+  background-color: #fabd64;
+  border-radius: 1rem;
+}
+.alertGreen {
+  background-color: #abe2ab;
+  border-radius: 1rem;
+}
+.quickViewWidth {
+  max-width: 36rem !important;
+}
+.reportResultPositive {
+  width: auto !important;
+  background-color: #800;
+  color: white;
+}
+.reportResultNegative {
+  width: auto !important;
+  background-color: #107e3e;
+  color: white;
+}
+iframe {
+  /* display: block; iframes are inline by default */
+  border: none; /* Reset default border */
+  height: 100vh; /* Viewport-relative units */
+  /* width: 100vw; */
+}
+.customHeaderToolbar {
+  background: linear-gradient(to bottom, #a9c4df, #e7ecf0);
+  place-content: center;
+}
+.borderRadius {
+  border-radius: 0.5rem;
+}
+.sapFShellBarHomeIcon {
+  width: 4rem !important;
+  height: 2.5rem !important;
+}
+.sapFShellBarSecondTitle {
+  font-size: 1rem !important;
+}
+.sapFShellBarHomeIcon {
+  width: auto !important;
+}
+.sapMITBFilter .sapMITBText {
+  overflow: inherit !important;
+}
+.alignDivCenter {
+  text-align: center !important;
+}
+.sapMBtnContent {
+  text-transform: capitalize !important;
+}
+/* .sapMLIBContent {
+  text-transform: capitalize;
+} */
+.customBackground {
+  background-color: #f6f6f7;
+  border-radius: 1rem;
+  /* padding: 0.5rem; */
+}
+.customBackgroundDark {
+  background-color: transparent;
+  border-radius: 1rem;
+  /* padding: 0.5rem; */
+}
+.customBackgroundBorder {
+  border-radius: 1rem;
+  /* border: solid; */
+  /* padding: 0.5rem; */
+}
+.customLink {
+  font-size: 1.2rem !important;
+}
+.customLabel {
+  font-size: 1rem !important;
+}
+.sapMListHdrText {
+  font-size: 1rem !important;
+}
+.sapMQuickViewPage .sapUiVltCell + .sapUiVltCell span {
+  max-height: 100% !important;
+}
+.customPointer {
+  cursor: pointer;
+}
+.customGradient {
+  background-image: linear-gradient(to bottom, #f6f6f7, #70b9ce);
+  background-color: #f6f6f7 !important;
+  border-radius: 1rem;
+}
+.customFontColor {
+  color: darkslategrey !important;
+}
+.customStatus {
+  width: 100% !important;
+  height: 100% !important;
+}
+.customListThemeItem {
+  height: auto !important;
+}
+.colorBlack {
+  color: black;
+}
+.customListMLIB {
+  -webkit-box-align: inherit !important;
+  align-items: inherit !important;
+}
+.customsapMLIBTransNoBorder {
+  background-color: transparent !important;
+  border: none !important;
+}
+.sapMObjStatusInverted {
+  font-size: 0.8rem !important;
+}
+.customBorderFigures {
+  border: solid;
+  border-width: 0.1rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.customMinHeight10 {
+  /* min-height: 10rem !important; */
+  max-height: 22rem !important;
+}
+.yScroll {
+  overflow-y: scroll;
+  max-height: 22rem;
+}
+/* index busy indicator specific */
+#splash-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  /* background-color: #e7e7e7 !important; */
+  background-size: 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+#splash-screen > * {
+  /* center child divs  */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* x-border-box */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* x-unselectable */
+  user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+.splash-screen-circle-outer {
+  z-index: 20000;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  border: 5px solid rgba(87, 113, 145, 0.9);
+  opacity: 0.9;
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 0 35px #577191;
+  -moz-animation: spinPulse 1s infinite ease-in-out;
+  -webkit-animation: spinPulse 1s infinite linear;
+}
+.splash-screen-circle-inner {
+  z-index: 20001;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 5px solid rgba(87, 113, 145, 0.9);
+  opacity: 0.9;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 0 15px #577191;
+  -moz-animation: spinoffPulse 1s infinite linear;
+  -webkit-animation: spinoffPulse 1s infinite linear;
+}
+.splash-screen-text {
+  z-index: 20002;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13px;
+  text-align: center;
+  text-shadow: 1px 1px #cccccc;
+  vertical-align: middle;
+  color: #002951;
+}
+@-moz-keyframes spinPulse {
+  0% {
+    -moz-transform: rotate(160deg);
+    opacity: 0;
+    box-shadow: 0 0 1px #577191;
+  }
+  50% {
+    -moz-transform: rotate(145deg);
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: rotate(-320deg);
+    opacity: 0;
+  }
+}
+@-moz-keyframes spinoffPulse {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spinPulse {
+  0% {
+    -webkit-transform: rotate(160deg);
+    opacity: 0;
+    box-shadow: 0 0 1px #577191;
+  }
+  50% {
+    -webkit-transform: rotate(145deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-320deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes spinoffPulse {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}

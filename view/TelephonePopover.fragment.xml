@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Popover showHeader="false" contentWidth="15rem" contentHeight="auto" placement="Auto">
+		<List id="phonelist" headerText="Select a number to call" items="{essentialServices>/numbers}">
+			<StandardListItem title="{essentialServices>key}" type="Active" press="onNumberPress"/>
+		</List>
+	</Popover>
+</core:FragmentDefinition>

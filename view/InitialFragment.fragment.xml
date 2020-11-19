@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<l:Grid hSpacing="0" defaultSpan="XL6 L6 M6 S12" visible="{= !${diagnosisView>/showResults}}">
+		<VBox>
+			<VBox class="sapUiSmallMarginBeginEnd">
+				<VBox id="initialInfo" height="100%" justifyContent="SpaceBetween">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+					<VBox>
+						<VBox class="sapUiSmallMargin customBackgroundBorder customPointer customGradient" height="100%">
+							<VBox>
+								<HBox justifyContent="SpaceBetween" class="sapUiTinyMarginBegin customPointer">
+									<!-- src="{path: 'essentialServices>properties/icon', formatter: '.formatter.formatItemIcon'} }" -->
+									<HBox class="customPointer">
+										<core:Icon src="sap-icon://family-care" size="3rem" color="Default" class="sapUiTinyMargin customPointer"/>
+										<core:Icon src="sap-icon://e-care" size="2rem" color="Positive" class="sapUiTinyMarginTopBottom customPointer"/>
+									</HBox>
+									<Button id="survey" class="sapUiTinyMarginEnd" visible="{= !${diagnosisView>/showResults}}"
+										text="{= ${device>/system/desktop} ? 'Launch COVID-19 Self Risk Assessment' : 'Launch'}" type="Emphasized" press="handleRiskAssessment"
+										icon="sap-icon://doctor"></Button>
+								</HBox>
+								<Title level="H1" titleStyle="H1" text="Health Risk Assessment Test" wrapping="true" class="sapUiTinyMarginBegin customPointer"/>
+								<Label
+									text="Please take up a free virtual Self-Assessment test to calculate potential health risk due to coronavirus. This test will just take a minute to complete."
+									wrapping="true" class="sapUiTinyMarginBegin customPointer customFontColor"/>
+							</VBox>
+							<VBox class="customPointer">
+								<Label class="sapUiTinyMargin customPointer customFontColor"
+									text="On completion of this test, we will spontaneously display the outcome and potential health risk factors. We will also provide our recommendations to help you and your family fight COVID-19."
+									wrapping="true"/>
+							</VBox>
+						</VBox>
+					</VBox>
+				</VBox>
+			</VBox>
+			<core:Fragment fragmentName="mymedicalhelpline.view.Redzones" type="XML"/>
+			<!-- <core:Fragment fragmentName="mymedicalhelpline.view.ContactTraces" type="XML"/> -->
+		</VBox>
+		<core:Fragment fragmentName="mymedicalhelpline.view.Figures" type="XML"/>
+		<core:Fragment fragmentName="mymedicalhelpline.view.StateCases" type="XML"/>
+		<!-- <core:Fragment fragmentName="mymedicalhelpline.view.Links" type="XML"/> -->
+	</l:Grid>
+</core:FragmentDefinition>

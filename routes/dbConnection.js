@@ -6,5 +6,6 @@ var connection = mysql.createConnection({
   password: process.env.AWS_RDS_PASSWORD,
   port: process.env.AWS_RDS_PORT,
   database: process.env.AWS_RDS_DATABASE,
+  multipleStatements: true,
 });
 module.exports = connection;

@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<l:Grid hSpacing="0" defaultSpan="XL6 L6 M6 S12">
+		<VBox>
+			<QuickViewCard class="quickViewWidth">
+				<QuickViewPage pageId="P1" header="Technical Support and Feedback" icon="sap-icon://technical-object" title="Technical Support and Feedback"
+					description="Facing technical issues? Want to give a feedback? Would like to register as an Essential Service Provider? We are always open!">
+					<groups>
+						<QuickViewGroup heading="Contact Details">
+							<elements>
+								<!-- <QuickViewGroupElement label="Phone Number" value="09876543210" type="phone"></QuickViewGroupElement> -->
+								<QuickViewGroupElement label="Email" value="covid19healthcare24x7@gmail.com" type="email"></QuickViewGroupElement>
+							</elements>
+						</QuickViewGroup>
+					</groups>
+				</QuickViewPage>
+			</QuickViewCard>
+		</VBox>
+	</l:Grid>
+</core:FragmentDefinition>

@@ -1,0 +1,83 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:fi="sap.f" xmlns:core="sap.ui.core" controllerName="mymedicalhelpline.controller.LoginView">
+	<Page visible="{loginView>/bIsVisible}" title="{i18n>appTitle}" floatingFooter="false" showHeader="false" enableScrolling="true"
+		busy="{loginView>/busy}" class="sapUiRootBackground sapMShellGlobalOuterBackground">
+		<customHeader>
+			<!-- <OverflowToolbar class="customHeaderToolbar">
+				<Title text="{i18n>appTitle}"/>
+			</OverflowToolbar> -->
+		</customHeader>
+		<content>
+			<VBox class="sapUiSmallMargin" alignItems="Center">
+				<items>
+					<MessageStrip class="sapUiTinyMarginBottom" text="{loginView>/errorMsg}" visible="{loginView>/isError}"
+						type="{= ${loginView>/isSuccess} ? 'Success' : 'Error'}" showIcon="true" showCloseButton="true"/>
+					<f:SimpleForm id="loginForm" width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12"
+						labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+						singleContainerFullSize="false">
+						<f:toolbar>
+							<OverflowToolbar height="auto" style="Clear">
+								<!-- <Image src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg.adapt.svg/1493030643828.svg"/> -->
+								<Image src="img/logo.png" height="auto" width="4rem" tooltip="{i18n>appTitle}" class="borderRadius"/>
+								<Title id="logonTitle" level="H1" text="{path: 'loginView>/showSignUp', formatter: '.formatter.formatSignupName'}" textAlign="Center"
+									titleStyle="H1"/>
+								<ToolbarSpacer/>
+								<!-- <Label design="Standard" id="appTitle" text="{i18n>appTitle}" class="sapMTitleStyleH1"/> -->
+							</OverflowToolbar>
+						</f:toolbar>
+						<f:content>
+							<Label/>
+							<Input id="mob" change="onMobChange"
+								value="{path: 'user>/mobile_no', type: 'sap.ui.model.type.Integer', constraints : { minimum : 1000000000, maximum : 9999999999 }}"
+								type="Tel" placeholder="{i18n>mob}" maxLength="10"/>
+							<Label/>
+							<Input id="pwd" change="onPwdChange"
+								value="{ path : 'user>/password', type : 'sap.ui.model.type.String', constraints : { minLength : 6, maxLength : 15 } }"
+								placeholder="{i18n>pwd}" type="Password"/>
+							<Label/>
+							<Input change="onFNameChange" value="{user>/fname}" maxLength="80" placeholder="{i18n>fname}" type="Text" visible="{loginView>/showSignUp}"/>
+							<Label/>
+							<Input change="onLNameChange" value="{user>/lname}" maxLength="80" placeholder="{i18n>lname}" type="Text" visible="{loginView>/showSignUp}"/>
+							<Label/>
+							<RadioButtonGroup columns="3" selectedIndex="{user>/sex}" visible="{loginView>/showSignUp}">
+								<RadioButton id="M" text="{i18n>male}"/>
+								<RadioButton id="F" text="{i18n>female}"/>
+								<RadioButton id="O" text="{i18n>other}"/>
+							</RadioButtonGroup>
+							<Label/>
+							<Input
+								value="{path: 'user>/age', type: 'sap.ui.model.type.Integer', oFormatOptions: {minIntegerDigits: 1, maxIntegerDigits: 2}, constraints : { minimum : 1, maximum : 100 }}"
+								maxLength="3" placeholder="{i18n>age}" type="Number" visible="{loginView>/showSignUp}"/>
+							<Label/>
+							<Input change="onEmailChange" maxLength="100"
+								value="{ path : 'user>/email', type : 'sap.ui.model.type.String', constraints : { search : '\\S+@\\S+\\.\\S+' } }"
+								placeholder="{i18n>email}" visible="{loginView>/showSignUp}" type="Email"/>
+							<!-- <Label/>
+							<Select selectedKey="EN" showSecondaryValues="true">
+								<items>
+									<core:ListItem key="EN" text="{i18n>lang}" additionalText="EN"/>
+								</items>
+							</Select> -->
+							<ObjectAttribute class="sapUiTinyMarginTopBottom alignDivCenter" title="Click to read" text="terms and conditions" active="true"
+								press="onTermsAndConditionsPress"/>
+							<!-- <Label text="By clicking this button, I agree to the "/>
+							  <Link  text="terms and conditions" press="onTermsAndConditionsPress"/> -->
+							<Button id="signin" type="Emphasized" text="{i18n>signin}" press="onSignInPress" visible="{loginView>/showSignIn}"/>
+							<Button id="signup" type="Emphasized" text="{i18n>signup}" press="onSignUpPress" visible="{loginView>/showSignUp}"/>
+						</f:content>
+					</f:SimpleForm>
+					<HBox>
+						<Label wrapping="true" design="Bold" text="{path: 'loginView>/showSignUp', formatter: '.formatter.formatAlreadyMemberpName'}"
+							textAlign="Center" class="sapUiTinyMarginEnd"/>
+						<Link press="onSignInLinkPress" text=" {i18n>signin}" emphasized="true" visible="{loginView>/showSignUp}"/>
+						<Link press="onSignUpLinkPress" text=" {i18n>signup}" emphasized="true" visible="{loginView>/showSignIn}"/>
+					</HBox>
+					<HBox visible="{loginView>/showSignIn}" class="sapUiTinyMarginTop">
+						<Label wrapping="true" design="Bold" text="Forgot Password?" textAlign="Center" class="sapUiTinyMarginEnd"/>
+						<Link text="Reset" press="onForgotPasswordPress" emphasized="true"/>
+					</HBox>
+				</items>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<FlexBox justifyContent="Center" direction="{= ${device>/system/desktop} ? 'Row' : 'Column'}"
+		class="sapMLIB customsapMLIBTransNoBorder customTileLayout">
+		<SlideTile class="tileLayout" transitionTime="400">
+			<tiles>
+				<GenericTile backgroundImage="img/dos1.jpg" frameType="TwoByOne" press="onTodoPress">
+					<!-- <TileContent footer="August 21, 2016">
+							<NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/>
+						</TileContent> -->
+				</GenericTile>
+				<GenericTile backgroundImage="img/dos2.png" frameType="TwoByOne" press="onTodoPress">
+					<!-- <TileContent footer="August 21, 2016">
+							<NewsContent contentText="SAP Unveils Powerful New Player Comparision Tool Exclusively on NFL.com" subheader="Today, SAP News"/>
+						</TileContent> -->
+				</GenericTile>
+				<GenericTile backgroundImage="img/dos3.jpg" frameType="TwoByOne" press="onTodoPress">
+					<!-- <TileContent footer="August 21, 2016">
+							<NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/>
+						</TileContent> -->
+				</GenericTile>
+				<GenericTile backgroundImage="img/dos4.png" frameType="TwoByOne" press="onTodoPress">
+					<!-- <TileContent footer="August 21, 2016">
+							<NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/>
+						</TileContent> -->
+				</GenericTile>
+				<GenericTile backgroundImage="img/dos5.jpg" frameType="TwoByOne" press="onTodoPress">
+					<!-- <TileContent footer="August 21, 2016">
+							<NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/>
+						</TileContent> -->
+				</GenericTile>
+			</tiles>
+		</SlideTile>
+		<VBox width="1rem"/>
+		<core:Fragment fragmentName="mymedicalhelpline.view.Links" type="XML"/>
+	</FlexBox>
+</core:FragmentDefinition>

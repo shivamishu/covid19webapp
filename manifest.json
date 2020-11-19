@@ -1,0 +1,186 @@
+{
+  "_version": "1.5.0",
+  "short_name": "Healthcare",
+  "name": "Healthcare Assistant",
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "density": 3
+    },
+    {
+      "src": "img/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "density": 3
+    },
+    {
+      "src": "img/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "density": 3
+    }
+  ],
+  "start_url": "../index.html",
+  "background_color": "#f6f6f7",
+  "theme_color": "#f6f6f7",
+  "display": "standalone",
+  "orientation": "portrait",
+  "sap.app": {
+    "_version": "1.4.0",
+    "id": "mymedicalhelpline",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "2.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "ach": "ach",
+    "sourceTemplate": {
+      "id": "servicecatalog.connectivityComponent",
+      "version": "1.2.0"
+    }
+  },
+  "sap.ui": {
+    "_version": "1.1.0",
+    "technology": "UI5",
+    "icons": {
+      "icon": "img/logo.png",
+      "favIcon": "logo.png",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": ["sap_fiori_3", "sap_fiori_3_dark"]
+  },
+  "sap.ui5": {
+    "_version": "1.1.0",
+    "rootView": {
+      "viewName": "mymedicalhelpline.view.App",
+      "type": "XML",
+      "async": true
+    },
+    "config": {
+      "fullWidth": true,
+      "sapFiori2Adaptation": true
+    },
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.f": {
+          "async": true,
+          "lazy": true
+        },
+        "sap.m": {
+          "async": true
+        },
+        "sap.ui.core": {
+          "async": true
+        },
+        "sap.ui.layout": {
+          "async": true,
+          "lazy": true
+        },
+        "sap.ui.layout.cssgrid": {
+          "async": true,
+          "lazy": true
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "preload": true,
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "mymedicalhelpline.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "mymedicalhelpline.view",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": ["notFound"]
+        },
+        "controlId": "idAppControl"
+      },
+      "routes": [
+        {
+          "pattern": "login",
+          "name": "loginpage",
+          "target": ["loginpage"]
+        },
+        {
+          "pattern": "",
+          "name": "diagnosispage",
+          "target": ["diagnosispage"]
+        },
+        {
+          "pattern": "appointment",
+          "name": "appointmentpage",
+          "target": ["appointmentpage"]
+        },
+        {
+          "pattern": "reset/{token}",
+          "name": "reset",
+          "target": ["reset"]
+        }
+      ],
+      "targets": {
+        "loginpage": {
+          "viewName": "LoginView",
+          "viewId": "loginpage",
+          "viewLevel": 1,
+          "title": "{i18n>appTitle}"
+        },
+        "reset": {
+          "viewName": "ResetView",
+          "viewId": "reset",
+          "viewLevel": 1,
+          "title": "{i18n>appTitle}"
+        },
+        "diagnosispage": {
+          "viewName": "DiagnosisView",
+          "viewId": "diagnosispage",
+          "viewLevel": 3,
+          "title": "{i18n>appTitle}"
+        },
+        "appointmentpage": {
+          "viewName": "AppointmentView",
+          "viewId": "appointmentpage",
+          "viewLevel": 3,
+          "title": "{i18n>appTitle}"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound",
+          "title": "{i18n>notFound}"
+        }
+      }
+    }
+  }
+}

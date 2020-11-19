@@ -1,0 +1,197 @@
+<core:FragmentDefinition xmlns:uxap="sap.uxap" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="tableItemDialog" stretch="{= ${device>/system/phone}}" title="COVID-19 Risk Assessment" type="Standard"
+		escapeHandler="onTableDialogClose" contentWidth="{= ${device>/system/phone} ? 'auto' : '60%'}"
+		contentHeight="{= ${device>/system/phone} ? '100%' : '60%'}" draggable="true" resizable="true" afterClose="handleRiskAssessmentAfterClose">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<MessageStrip text="{assessmentModel>/errorMsg}" visible="{assessmentModel>/bIsError}" type="Error" showIcon="true" showCloseButton="true"/>
+				<VBox visible="{assessmentModel>/step0}">
+					<core:Fragment fragmentName="mymedicalhelpline.view.DiagnosisFragment" type="XML"/>
+				</VBox>
+				<VBox visible="{assessmentModel>/step1}">
+					<FeedListItem class="customBorderRound sapUiSmallMargin" sender="{= ${device>/system/phone} ? 'Doctor:' : 'Doctor'}" senderActive="false"
+						icon="sap-icon://doctor" iconActive="false" iconDensityAware="true" text="What's your Body temperature?" convertLinksToAnchorTags="None"/>
+					<List id="feverList" includeItemInSelection="true" mode="SingleSelectLeft" selectionChange=".onSelectionChange">
+						<items>
+							<StandardListItem wrapping="true" title="Normal(96°F - 98.6°F)" id="normal"/>
+							<StandardListItem wrapping="true" title="Fever(98.6°F - 102°F)" id="fever"/>
+							<StandardListItem wrapping="true" title="High Fever(&gt; 102°F)" id="high"/>
+							<!-- <StandardListItem wrapping="true" title="Dont' know" id="noQ1"/> -->
+						</items>
+					</List>
+				</VBox>
+				<VBox visible="{assessmentModel>/step2}">
+					<FeedListItem class="customBorderRound sapUiSmallMargin" sender="{= ${device>/system/phone} ? 'Doctor:' : 'Doctor'}" senderActive="false"
+						icon="sap-icon://doctor" iconActive="false" iconDensityAware="true"
+						text="Are you experiencing any of the symptoms below? (mark all those applicable)" convertLinksToAnchorTags="None"/>
+					<List id="commonSymptomsList" includeItemInSelection="true" mode="MultiSelect" selectionChange="onListItemSelectionChange">
+						<items>
+							<StandardListItem wrapping="true" title="Dry Cough" id="drycough"/>
+							<StandardListItem wrapping="true" title="Sneezing" id="sneeze"/>
+							<StandardListItem wrapping="true" title="Sore Throat" id="sore"/>
+							<StandardListItem wrapping="true" title="Weakness" id="weakness"/>
+							<StandardListItem wrapping="true" title="None of these" id="noQ2"/>
+						</items>
+					</List>
+				</VBox>
+				<VBox visible="{assessmentModel>/step3}">
+					<FeedListItem class="customBorderRound sapUiSmallMargin" sender="{= ${device>/system/phone} ? 'Doctor:' : 'Doctor'}" senderActive="false"
+						icon="sap-icon://doctor" iconActive="false" iconDensityAware="true"
+						text="Apart from previous ones, are you experiencing any of the below symptoms? (mark all those applicable)" convertLinksToAnchorTags="None"/>
+					<List id="addSymptomsList" includeItemInSelection="true" mode="MultiSelect" selectionChange="onListItemSelectionChange">
+						<items>
+							<StandardListItem wrapping="true" title="Moderate to Severe Cough" id="severecough"/>
+							<StandardListItem wrapping="true" title="Feeling Breathless" id="breathless"/>
+							<StandardListItem wrapping="true" title="Difficulty in Breathing" id="diffbreathing"/>
+							<StandardListItem wrapping="true" title="Drowsiness" id="drowsy"/>
+							<StandardListItem wrapping="true" title="Persistent Pain and Pressure in Chest" id="chestpain"/>
+							<StandardListItem wrapping="true" title="Severe Weakness" id="severeweakness"/>
+							<StandardListItem wrapping="true" title="None of These" id="noQ3"/>
+						</items>
+					</List>
+				</VBox>
+				<VBox visible="{assessmentModel>/step4}">
+					<FeedListItem class="customBorderRound sapUiSmallMargin" sender="{= ${device>/system/phone} ? 'Doctor:' : 'Doctor'}" senderActive="false"
+						icon="sap-icon://doctor" iconActive="false" iconDensityAware="true"
+						text="Please select your travel and exposure details (mark all those applicable)" convertLinksToAnchorTags="None"/>
+					<List id="travelList" includeItemInSelection="true" mode="MultiSelect" selectionChange="onListItemSelectionChange">
+						<items>
+							<StandardListItem wrapping="true" title="Travel History" id="travel"/>
+							<StandardListItem wrapping="true" title="Contact with a person with Symptoms" id="contact"/>
+							<StandardListItem wrapping="true" title="History of travel or meeting in hotspot area in last few days" id="hotspotarea"/>
+							<StandardListItem wrapping="true" title="Close Contact with confirmed COVID-19 person in last 14 days" id="closecontact"/>
+							<StandardListItem wrapping="true" title="None of These" id="noQ4"/>
+						</items>
+					</List>
+				</VBox>
+				<VBox visible="{assessmentModel>/step5}">
+					<FeedListItem class="customBorderRound sapUiSmallMargin" sender="{= ${device>/system/phone} ? 'Doctor:' : 'Doctor'}" senderActive="false"
+						icon="sap-icon://doctor" iconActive="false" iconDensityAware="true"
+						text="Do you have a history of any of these conditions? (mark all those applicable)" convertLinksToAnchorTags="None"/>
+					<List id="diseaseList" includeItemInSelection="true" mode="MultiSelect" selectionChange="onListItemSelectionChange">
+						<items>
+							<StandardListItem wrapping="true" title="Diabetes" id="diabetes"/>
+							<StandardListItem wrapping="true" title="High Blood Pressure" id="hbp"/>
+							<StandardListItem wrapping="true" title="Heart Disease" id="heart"/>
+							<StandardListItem wrapping="true" title="Kidney Disease" id="kidney"/>
+							<StandardListItem wrapping="true" title="Lung Disease" id="lung"/>
+							<StandardListItem wrapping="true" title="Stroke" id="stroke"/>
+							<StandardListItem wrapping="true" title="Reduced Immunity" id="immunity"/>
+							<StandardListItem wrapping="true" title="None of these" id="noQ5"/>
+						</items>
+					</List>
+				</VBox>
+				<VBox visible="{assessmentModel>/step6}">
+					<FeedListItem class="customBorderRound sapUiSmallMargin" sender="{= ${device>/system/phone} ? 'Doctor:' : 'Doctor'}" senderActive="false"
+						icon="sap-icon://doctor" iconActive="false" iconDensityAware="true" text="How have your symptomns progressed over the last 48 hrs?"
+						convertLinksToAnchorTags="None"/>
+					<List id="conditionList" includeItemInSelection="true" mode="SingleSelectLeft">
+						<items>
+							<StandardListItem wrapping="true" title="Improved" id="improved"/>
+							<StandardListItem wrapping="true" title="No Change" id="nochange"/>
+							<StandardListItem wrapping="true" title="Worsened" id="worse"/>
+							<StandardListItem wrapping="true" title="Worsened Considerably" id="worst"/>
+						</items>
+					</List>
+				</VBox>
+				<VBox visible="{assessmentModel>/step7}">
+					<FeedListItem class="customBorderRound sapUiSmallMargin" sender="{= ${device>/system/phone} ? 'Doctor:' : 'Doctor'}" senderActive="false"
+						icon="sap-icon://doctor" iconActive="false" iconDensityAware="true"
+						text="Thank you for completing the risk assessment test! {assessmentModel>/final_msg}" convertLinksToAnchorTags="None"/>
+					<Label visible="{= ${user>/status_id} !== 'LOW'}" wrapping="true"
+						text="How many persons have come in close contact with you in last 14 days?" labelFor="idTotalContacts"/>
+					<ComboBox visible="{= ${user>/status_id} !== 'LOW'}" selectedKey="{assessmentModel>/total_contacts}" change="handleTotalContactsChange">
+						<items>
+							<core:ListItem key="0" text="0"/>
+							<core:ListItem key="1" text="1"/>
+							<core:ListItem key="2" text="2"/>
+							<core:ListItem key="3" text="3"/>
+							<core:ListItem key="4" text="4"/>
+							<core:ListItem key="5" text="5"/>
+							<core:ListItem key="6" text="6"/>
+							<core:ListItem key="7" text="7"/>
+							<core:ListItem key="8" text="8"/>
+							<core:ListItem key="9" text="9"/>
+							<core:ListItem key="10" text="10"/>
+							<core:ListItem key="11" text="11"/>
+							<core:ListItem key="12" text="12"/>
+							<core:ListItem key="13" text="13"/>
+							<core:ListItem key="14" text="14"/>
+							<core:ListItem key="15" text="15"/>
+							<core:ListItem key="16" text="16"/>
+							<core:ListItem key="17" text="17"/>
+							<core:ListItem key="18" text="18"/>
+							<core:ListItem key="19" text="19"/>
+							<core:ListItem key="20" text="20"/>
+						</items>
+					</ComboBox>
+					<Table id="idProductsTable" visible="{= ${user>/status_id} !== 'LOW'}" alternateRowColors="true"
+						items="{ path: 'assessmentModel>/contacts' }" popinLayout="{= ${device>/system/desktop} ? 'GridSmall' : 'Block'}"
+						contextualWidth="{= ${device>/system/desktop} ? 'Auto' : 'Inherit'}" noDataText="No close contacts">
+						<headerToolbar>
+							<!-- <OverflowToolbar>
+								<Label visible="{= !${device>/system/phone}}" wrapping="true" text="How many persons have come in close contact with you in last 14 days?" labelFor="idTotalContacts"/>
+								<ComboBox visible="{= !${device>/system/phone}}" selectedKey="{assessmentModel>/total_contacts}" change="handleTotalContactsChange">
+									<items>
+										<core:ListItem key="0" text="0"/>
+										<core:ListItem key="1" text="1"/>
+										<core:ListItem key="2" text="2"/>
+										<core:ListItem key="3" text="3"/>
+										<core:ListItem key="4" text="4"/>
+										<core:ListItem key="5" text="5"/>
+										<core:ListItem key="6" text="6"/>
+										<core:ListItem key="7" text="7"/>
+										<core:ListItem key="8" text="8"/>
+										<core:ListItem key="9" text="9"/>
+										<core:ListItem key="10" text="10"/>
+										<core:ListItem key="11" text="11"/>
+										<core:ListItem key="12" text="12"/>
+										<core:ListItem key="13" text="13"/>
+										<core:ListItem key="14" text="14"/>
+										<core:ListItem key="15" text="15"/>
+										<core:ListItem key="16" text="16"/>
+										<core:ListItem key="17" text="17"/>
+										<core:ListItem key="18" text="18"/>
+										<core:ListItem key="19" text="19"/>
+										<core:ListItem key="20" text="20"/>
+									</items>
+								</ComboBox>
+							</OverflowToolbar> -->
+						</headerToolbar>
+						<columns>
+							<Column width="auto" minScreenWidth="Tablet" demandPopin="{device>/system/phone}" popinDisplay="Block" hAlign="Left">
+								<Text text="Name"/>
+							</Column>
+							<Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" hAlign="Left">
+								<Text text="Contact Number"/>
+							</Column>
+							<Column width="auto" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Block" hAlign="Left">
+								<Text text="Address"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Input value="{assessmentModel>contact_name}" maxLength="80" placeholder="Enter Name" type="Text"/>
+									<Input
+										value="{path: 'assessmentModel>contact_number', type: 'sap.ui.model.type.Integer', constraints : { minimum : 10000000, maximum : 99999999999 }}"
+										type="Number" placeholder="Enter Contact Number" maxLength="11"/>
+									<Input value="{assessmentModel>contact_address}" maxLength="200" placeholder="Enter Address/Location" type="Text"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</VBox>
+			</VBox>
+		</content>
+		<buttons>
+			<Button id="resultRisk" type="Emphasized" text="Show Results" tooltip="Show results" press="handleRiskAssessmentResults"
+				visible="{= ${assessmentModel>/result}}"/>
+			<Button id="prev" type="Default" text="Previous" tooltip="Previous step" press="handleRiskAssessmentPrev"
+				visible="{= !${assessmentModel>/result} &amp;&amp; !${assessmentModel>/step0}}"/>
+			<Button id="nextRisk" type="Emphasized" text="Next" tooltip="Next" press="handleRiskAssessmentNext"
+				visible="{= !${assessmentModel>/result}}"/>
+			<Button id="closeRisk" text="Close" tooltip="Close" visible="{= !${assessmentModel>/result}}" press="handleRiskAssessmentClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

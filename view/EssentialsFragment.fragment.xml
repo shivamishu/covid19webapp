@@ -1,0 +1,64 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.f"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+	<VBox class="sapUiTinyMarginTopBottom" busy="{essentialServices>/busy}">
+		<HBox>
+			<Title text="Search Nearby Essential Services" class="sapUiTinyMarginBegin"/>
+			<core:Icon class="sapUiTinyMarginBegin customIconBorder" src="sap-icon://hint" press="onEssentialHelp"/>
+		</HBox>
+		<form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+			adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+			singleContainerFullSize="false">
+			<Label labelFor="searchEssentialSB" text="City"/>
+			<SearchField id="searchEssentialSB" width="100%" value="{user>/city}" liveChange="handleEssentialSearch" change="handleEssentialSearch"
+				placeholder="Enter your city name"/>
+			<Label labelFor="categories" text="Categories"/>
+			<MultiComboBox id="multiComboCategory" width="100%" selectedKeys="{essentialServices>/selectedKeys}"
+				selectionFinish="handleKeySelectionFinish" items="{ path: 'essentialServices>/categories', sorter: { path: 'key' } }">
+				<core:Item key="{essentialServices>key}" text="{essentialServices>key}"/>
+			</MultiComboBox>
+		</form:SimpleForm>
+		<f:GridList id="gridList" noDataText="No services available for current city"
+			items="{ path: 'essentialServices>/features', sorter: { path: 'properties/recordid', descending: false } }" growing="true"
+			growingThreshold="9" updateFinished="onEssentialUpdateFinished">
+			<f:headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="{essentialServices>/total}"/>
+					</content>
+				</OverflowToolbar>
+			</f:headerToolbar>
+			<f:customLayout>
+				<grid:GridBoxLayout boxWidth="{path: 'device>/system', formatter: '.formatter.formatGridBoxWidth'}"/>
+			</f:customLayout>
+			<f:GridListItem>
+				<VBox height="100%" justifyContent="SpaceBetween">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+					<VBox class="sapUiSmallMargin" height="100%">
+						<VBox class="customBackgroundDark">
+							<HBox justifyContent="SpaceBetween" class="sapUiTinyMarginBegin">
+								<!-- src="{path: 'essentialServices>properties/icon', formatter: '.formatter.formatItemIcon'} }" -->
+								<core:Icon modelContextChange="handleIconUrlSet" size="2.625rem" color="Default" class="sapUiTinyMarginTopBottom"/>
+								<Button class="sapUiTinyMarginEnd" visible="{= ${essentialServices>properties/contact} !== 'https://www.covid19india.org/essentials'}"
+									text="{path: 'essentialServices>properties/icon', formatter: '.formatter.formatIconText'}" icon="sap-icon://trend-up" type="Default"
+									press="openExternalLink"/>
+							</HBox>
+							<Title text="{essentialServices>properties/name}" wrapping="true" class="sapUiTinyMarginBegin"/>
+							<Label text="{essentialServices>properties/geoTag}" wrapping="true" class="sapUiTinyMarginBegin"/>
+						</VBox>
+						<Label text="{essentialServices>properties/desc}" wrapping="true" class="sapUiSmallMarginTopBottom"/>
+						<Label wrapping="true"
+							text="For more help, click on the {path: 'essentialServices>properties/icon', formatter: '.formatter.formatIconText'} button to open our external page."
+							visible="{= ${essentialServices>properties/contact} !== 'https://www.covid19india.org/essentials'}" class="sapUiTinyMarginTopBottom"/>
+						<VBox>
+							<ObjectAttribute title="Ph" text="{essentialServices>properties/phone}" active="true" press="handleEssentialPhone"
+								class="sapUiTinyMarginBottom"/>
+							<Label text="{essentialServices>properties/addr}" wrapping="true"/>
+						</VBox>
+					</VBox>
+				</VBox>
+			</f:GridListItem>
+		</f:GridList>
+	</VBox>
+</core:FragmentDefinition>

@@ -4,6 +4,7 @@ var loginroutes = require("./routes/loginroutes");
 var addressroutes = require("./routes/addressroutes");
 var symptomsroute = require("./routes/symptoms");
 var contactroute = require("./routes/contacttraces");
+var authMiddleware = require("./auth/authMiddleware");
 // var containmentzones = require('./routes/containmentzones');
 // body parser added
 var bodyParser = require("body-parser");
@@ -68,8 +69,17 @@ router.post("/containmentcities", addressroutes.containmentcities);
 router.post("/containmentresults", addressroutes.containmentresults);
 // route to upload covid19 results
 router.post("/upload_file", addressroutes.upload_file);
-// route to get containment location
-router.post("/upload_file", addressroutes.containmentlocation);
+//contact trace list for ADMIN
+router.post(
+  "/contacttracelist",
+  authMiddleware.Validate,
+  contactroute.contacttracelist
+);
+//send notification
+router.post("/sendnotification", contactroute.sendnotification);
+//confirm report result
+router.post("/confirmreport", contactroute.confirmreport);
+//default
 app.use("/api", router);
 
 // FORMAT OF TOKEN

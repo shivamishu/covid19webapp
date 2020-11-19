@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SlideTile class="tileLayout sapUiTinyMarginTopBottom" transitionTime="300">
+		<tiles>
+			<GenericTile backgroundImage="img/mygov.png" frameType="TwoByOne" press="onExternalLinksPress">
+				<!-- <TileContent footer="Government Of India"> -->
+				<!-- <NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/> -->
+				<!-- </TileContent> -->
+				<customData>
+					<core:CustomData key="URL" value="https://www.mygov.in/"/>
+				</customData>
+			</GenericTile>
+			<GenericTile backgroundImage="img/moh.png" frameType="TwoByOne" press="onExternalLinksPress">
+				<!-- <TileContent footer="Ministry of Health and Family Welfare"> -->
+				<!-- <NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/> -->
+				<!-- </TileContent> -->
+				<customData>
+					<core:CustomData key="URL" value="https://www.mohfw.gov.in/"/>
+				</customData>
+			</GenericTile>
+			<GenericTile backgroundImage="img/icmr.png" frameType="TwoByOne" press="onExternalLinksPress">
+				<!-- <TileContent footer="Indian Council of Medical Research"> -->
+				<!-- <NewsContent contentText="SAP Unveils Powerful New Player Comparision Tool Exclusively on NFL.com" subheader="Today, SAP News"/> -->
+				<!-- </TileContent> -->
+				<customData>
+					<core:CustomData key="URL" value="https://www.icmr.gov.in/"/>
+				</customData>
+			</GenericTile>
+			<GenericTile backgroundImage="img/cdc.png" frameType="TwoByOne" press="onExternalLinksPress">
+				<!-- <TileContent footer="Centers for Disease Control and Prevention"> -->
+				<!-- <NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/> -->
+				<!-- </TileContent> -->
+				<customData>
+					<core:CustomData key="URL" value="https://www.cdc.gov/"/>
+				</customData>
+			</GenericTile>
+			<GenericTile backgroundImage="img/who.png" frameType="TwoByOne" press="onExternalLinksPress">
+				<!-- <TileContent footer="World Health Organization"> -->
+				<!-- <NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/> -->
+				<!-- </TileContent> -->
+				<customData>
+					<core:CustomData key="URL" value="https://www.who.int/"/>
+				</customData>
+			</GenericTile>
+			<GenericTile backgroundImage="img/arogya.png" frameType="TwoByOne" press="onExternalLinksPress">
+				<!-- <TileContent footer="Aarogya Setu Application"> -->
+				<!-- <NewsContent contentText="Wind Map: Monitoring Real-Time and Fore-casted Wind Conditions across the Globe" subheader="Today, SAP News"/> -->
+				<!-- </TileContent> -->
+				<customData>
+					<core:CustomData key="URL" value="https://www.mygov.in/aarogya-setu-app/"/>
+				</customData>
+			</GenericTile>
+		</tiles>
+	</SlideTile>
+</core:FragmentDefinition>

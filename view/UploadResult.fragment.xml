@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns:u="sap.ui.unified" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="uploadDialog" stretch="{= ${device>/system/phone}}" title="Upload COVID-19 Test Result" type="Standard"
+		draggable="true" resizable="true">
+		<content>
+			<VBox class="sapUiSmallMargin" alignItems="Center">
+				<u:FileUploader id="fileUploader" class="sapUiSmallMarginTop" name="fileToUpload" uploadUrl="upload/"
+						tooltip="Upload your file to Lightning Storage on Cloud" uploadComplete="handleUploadComplete" change="onFileChange"/>
+				<Label labelFor="rbg" text="Please choose your COVID19 Test Result" />
+                <HBox>
+		        <!-- <RadioButtonGroup id="rbg" columns="2" selectedIndex="1" class="sapUiMediumMarginBottom"> -->
+			        <RadioButton id="positive" text="COVID19 POSITIVE" valueState="Error" selected="true"/>
+			        <RadioButton id="negative" text="COVID19 NEGATIVE" valueState="Success" />
+				<!-- </RadioButtonGroup> -->
+                </HBox>
+			</VBox>
+		</content>
+		<buttons>
+            <Button id="cancel" type="Default" text="Cancel" tooltip="Cancel" press="handleUploadCancel"/>
+			<Button id="upload" type="Emphasized" text="Upload" tooltip="Upload COVID19 test results" press="handleUploadResults"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

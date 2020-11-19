@@ -1,0 +1,73 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<VBox class="sapUiSmallMargin">
+		<!-- visible="{= !${diagnosisView>/showResults}}" -->
+		<VBox direction="Column" justifyContent="Center" width="100%" class="sapUiTinyMarginTopBottom">
+			<items>
+				<Label wrapping="true" design="Bold" text="Hey {user>/fname} ! Please fill up the details and take 'COVID-19 Risk Assessment'"
+					textAlign="Center" width="100%"/>
+			</items>
+		</VBox>
+		<f:SimpleForm id="addressForm" editable="true" layout="ColumnLayout" width="100%" columnsM="2" columnsL="3" columnsXL="4">
+			<f:toolbar>
+				<OverflowToolbar id="TB1">
+					<Title id="addressTitle" text="Current Address"/>
+					<ToolbarSpacer/>
+				</OverflowToolbar>
+			</f:toolbar>
+			<f:content>
+				<!-- <Label text="Block, House Number (Optional)"/>
+				<Input id="block" value="{user>/block_no}" placeholder="Block">
+					<layoutData>
+						<f:ColumnElementData cellsSmall="4" cellsLarge="8"/>
+					</layoutData>
+				</Input>
+				<Input id="hnum" value="{user>/house_no}" placeholder="House Number" change="onAddressFieldChange"/>
+				<Label text="Society Name (Optional)"/>
+				<Input id="society" value="{user>/society}" placeholder="Society Name"/>
+				<Label text="Street/Colony (Optional)"/>
+				<Input id="street" value="{user>/street}" placeholder="Street/Colony" change="onAddressFieldChange"/> -->
+				<Label text="Mobile Number"/>
+				<Input required="true" change="onMobChange"
+					value="{path: 'user>/mobile_no', type: 'sap.ui.model.type.Integer', constraints : { minimum : 1000000000, maximum : 9999999999 }}"
+					type="Tel" placeholder="Mobile Number" maxLength="10"/>
+				<Label text="First Name"/>
+				<Input change="onFNameChange" value="{user>/fname}" maxLength="80" placeholder="{i18n>fname}" type="Text"/>
+				<Label text="Last Name"/>
+				<Input change="onLNameChange" value="{user>/lname}" maxLength="80" placeholder="{i18n>lname}" type="Text"/>
+				<Label text="Gender"/>
+				<RadioButtonGroup columns="3" selectedIndex="{user>/sex}">
+					<RadioButton id="M" text="{i18n>male}"/>
+					<RadioButton id="F" text="{i18n>female}"/>
+					<RadioButton id="O" text="{i18n>other}"/>
+				</RadioButtonGroup>
+				<Label text="Age"/>
+				<Input
+					value="{path: 'user>/age', type: 'sap.ui.model.type.Integer', oFormatOptions: {minIntegerDigits: 1, maxIntegerDigits: 2}, constraints : { minimum : 1, maximum : 100 }}"
+					maxLength="3" placeholder="{i18n>age}" type="Number"/>
+				<Label/>
+				<Label text="Street Address"/>
+				<Input value="{user>/street}" placeholder="Address Line 1" required="false"/>
+				<Label text="City"/>
+				<Input value="{user>/city}" placeholder="City" required="true" change="onAddressFieldChange">
+					<!-- <layoutData>
+						<f:ColumnElementData cellsSmall="8" cellsLarge="4"/>
+					</layoutData> -->
+				</Input>
+				<!-- <Input id="pin" value="{user>/pincode}" placeholder="PIN Code" change="onAddressFieldChange"/> -->
+				<Label text="State/UT"/>
+				<ComboBox id="state" required="true" showSecondaryValues="true" selectedKey="{user>/state_id}" items="{diagnosisView>/states}">
+					<items>
+						<core:ListItem key="{diagnosisView>key}" text="{diagnosisView>text}" additionalText="{diagnosisView>key}"/>
+					</items>
+				</ComboBox>
+				<Label text="Country"/>
+				<ComboBox id="country" selectedKey="{user>/country}" required="true">
+					<items>
+						<core:ListItem key="IN" text="India" additionalText="IND"/>
+					</items>
+				</ComboBox>
+			</f:content>
+		</f:SimpleForm>
+		<MessageStrip text="{diagnosisView>/errorMsg}" visible="{diagnosisView>/isError}" type="Error" showIcon="true" showCloseButton="true"/>
+	</VBox>
+</core:FragmentDefinition>

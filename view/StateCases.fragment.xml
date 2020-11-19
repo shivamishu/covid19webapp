@@ -1,0 +1,107 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<VBox class="sapMLIB customListMLIB sapUiTinyMarginBeginEnd">
+		<FlexBox justifyContent="SpaceBetween" direction="{= ${device>/system/desktop} ? 'Row' : 'Column'}">
+			<VBox class="customBorderFigures sapUiSmallMarginTopBottom" busy="{stateCityCasesModel>/busy}">
+				<Title text="COVID-19 State Cases"/>
+				<ComboBox change="onCasesStateChange" showSecondaryValues="true" selectedKey="{diagnosisView>/state_key}" items="{diagnosisView>/states}">
+					<items>
+						<core:ListItem key="{diagnosisView>key}" text="{diagnosisView>text}" additionalText="{diagnosisView>key}"/>
+					</items>
+				</ComboBox>
+				<Label wrapping="true" text="{stateCityCasesModel>/lastUpdated}" class="sapUiTinyMarginTopBottom"/>
+				<!-- Total cases -->
+				<VBox class="sapUiSmallMarginTop">
+					<ObjectStatus text="Total tests conducted: {path: 'stateCityCasesModel>/tested', formatter: '.formatter.formatNumbers'}" inverted="true"
+						state="Indication05" icon="sap-icon://lab"/>
+					<HBox><ObjectStatus visible="{= ${stateCityCasesModel>/new_tested} &gt; 0}"
+						text="{path: 'stateCityCasesModel>/new_tested', formatter: '.formatter.formatNumbers'}" icon="sap-icon://arrow-top" state="Indication05"/><Label class="sapUiTinyMarginBegin" text="{figuresModel>/testLastUpdated}"/></HBox>
+				</VBox>
+				<!-- Total cases -->
+				<VBox class="sapUiSmallMarginTop">
+					<ObjectStatus text="Total cases: {path: 'stateCityCasesModel>/totalCases', formatter: '.formatter.formatNumbers'}" inverted="true"
+						state="None" icon="sap-icon://add-activity"/>
+					<ObjectStatus visible="{= ${stateCityCasesModel>/new_totalCases} &gt; 0}"
+						text="{path: 'stateCityCasesModel>/new_totalCases', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top" state="None"/>
+				</VBox>
+				<!-- <Title text="Active Cases" class="sapUiTinyMarginTop"/> -->
+				<VBox class="sapUiTinyMarginTop">
+					<ObjectStatus text="Active cases: {path: 'stateCityCasesModel>/activeCases', formatter: '.formatter.formatNumbers'}" inverted="true"
+						state="Indication03" icon="sap-icon://status-negative"/>
+					<ObjectStatus visible="{= ${stateCityCasesModel>/new_activeCases} &gt; 0}"
+						text="{path: 'stateCityCasesModel>/new_activeCases', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top"
+						state="Indication03"/>
+				</VBox>
+				<!-- <Title text="Recovered" class="sapUiTinyMarginTop"/> -->
+				<VBox class="sapUiTinyMarginTop">
+					<ObjectStatus text="Recovered cases: {path: 'stateCityCasesModel>/recovered', formatter: '.formatter.formatNumbers'}" inverted="true"
+						state="Success" icon="sap-icon://accept"/>
+					<ObjectStatus visible="{= ${stateCityCasesModel>/new_recovered} &gt; 0}"
+						text="{path: 'stateCityCasesModel>/new_recovered', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top" state="Success"/>
+				</VBox>
+				<!-- <Title text="Deceased" class="sapUiTinyMarginTop"/> -->
+				<VBox class="sapUiTinyMarginTopBottom">
+					<ObjectStatus text="Death/Deceased cases: {path: 'stateCityCasesModel>/deaths', formatter: '.formatter.formatNumbers'}" inverted="true"
+						state="Indication01" icon="sap-icon://alert"/>
+					<ObjectStatus visible="{= ${stateCityCasesModel>/new_deaths} &gt; 0}"
+						text="{path: 'stateCityCasesModel>/new_deaths', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top" state="Indication01"/>
+				</VBox>
+			</VBox>
+			<VBox class="customBorderFigures sapUiSmallMarginTopBottom">
+				<Title text="COVID-19 City Cases"/>
+				<SearchField width="100%" value="{stateCityCasesModel>/cityResults/cityName}" search=".onCityCasesChange" change="onCityCasesChange"
+					placeholder="Enter a city name"></SearchField>
+				<!-- <SearchField width="100%" value="Bengaluru Urban" search=".onCityCasesChange" change="onCityCasesChange"
+					suggest=".onSuggest" placeholder="Enter a city name" enableSuggestions="true"
+					suggestionItems="{ path: 'stateCityCasesModel>/Cities', sorter: { path: '' }}">
+					<SuggestionItem text="{stateCityCasesModel>}" key="{stateCityCasesModel>}"/>
+				</SearchField> -->
+				<!-- <Label wrapping="true" text="Las updated at: {stateCityCasesModel>/lastUpdated}" class="sapUiTinyMarginTopBottom"/> -->
+				<!-- Total cases -->
+				<!-- <VBox class="sapUiSmallMarginTop">
+					<ObjectStatus text="Total tests conducted: {path: 'stateCityCasesModel>/tested', formatter: '.formatter.formatNumbers'}" inverted="true"
+						state="Indication05" icon="sap-icon://lab"/>
+					<HBox><ObjectStatus text="{path: 'stateCityCasesModel>/new_tested', formatter: '.formatter.formatNumbers'}" icon="sap-icon://arrow-top"
+						state="Indication05"/>
+						<Label class="sapUiTinyMarginBegin" text="{figuresModel>/testLastUpdated}"/></HBox>
+				</VBox> -->
+				<Label text="{stateCityCasesModel>/cityResults/cityName} cases" class="sapUiSmallMargin"
+					visible="{= !${stateCityCasesModel>/hidecityresults}}"/>
+				<Label text="No results found!" class="sapUiSmallMargin" visible="{stateCityCasesModel>/hidecityresults}"/>
+				<VBox visible="{= !${stateCityCasesModel>/hidecityresults}}">
+					<!-- Total cases -->
+					<VBox class="sapUiSmallMarginTop">
+						<ObjectStatus text="Total cases: {path: 'stateCityCasesModel>/cityResults/totalCases', formatter: '.formatter.formatNumbers'}"
+							inverted="true" state="None" icon="sap-icon://add-activity"/>
+						<ObjectStatus visible="{= ${stateCityCasesModel>/cityResults/new_totalCases} &gt; 0}"
+							text="{path: 'stateCityCasesModel>/cityResults/new_totalCases', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top"
+							state="None"/>
+					</VBox>
+					<!-- <Title text="Active Cases" class="sapUiTinyMarginTop"/> -->
+					<VBox class="sapUiTinyMarginTop">
+						<ObjectStatus text="Active cases: {path: 'stateCityCasesModel>/cityResults/activeCases', formatter: '.formatter.formatNumbers'}"
+							inverted="true" state="Indication03" icon="sap-icon://status-negative"/>
+						<ObjectStatus visible="{= ${stateCityCasesModel>/cityResults/new_activeCases} &gt; 0}"
+							text="{path: 'stateCityCasesModel>/cityResults/new_activeCases', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top"
+							state="Indication03"/>
+					</VBox>
+					<!-- <Title text="Recovered" class="sapUiTinyMarginTop"/> -->
+					<VBox class="sapUiTinyMarginTop">
+						<ObjectStatus text="Recovered cases: {path: 'stateCityCasesModel>/cityResults/recovered', formatter: '.formatter.formatNumbers'}"
+							inverted="true" state="Success" icon="sap-icon://accept"/>
+						<ObjectStatus visible="{= ${stateCityCasesModel>/cityResults/new_recovered} &gt; 0}"
+							text="{path: 'stateCityCasesModel>/cityResults/new_recovered', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top"
+							state="Success"/>
+					</VBox>
+					<!-- <Title text="Deceased" class="sapUiTinyMarginTop"/> -->
+					<VBox class="sapUiTinyMarginTopBottom">
+						<ObjectStatus text="Death/Deceased cases: {path: 'stateCityCasesModel>/cityResults/deaths', formatter: '.formatter.formatNumbers'}"
+							inverted="true" state="Indication01" icon="sap-icon://alert"/>
+						<ObjectStatus visible="{= ${stateCityCasesModel>/cityResults/new_deaths} &gt; 0}"
+							text="{path: 'stateCityCasesModel>/cityResults/new_deaths', formatter: '.formatter.formatNumbers'} new" icon="sap-icon://arrow-top"
+							state="Indication01"/>
+					</VBox>
+				</VBox>
+			</VBox>
+		</FlexBox>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <QuickViewCard class="quickViewWidth">
+		<QuickViewPage pageId="P2" header="COVID-19(Coronavirus) Test Reports" icon="sap-icon://clinical-order" title="COVID-19(Coronavirus) Test Reports" description="Testing Center: JA Hospital">
+			<groups>
+				<QuickViewGroup heading="Results">
+					<elements>
+                        <QuickViewGroupElement label="Report ID" value="20201405001" type="text"></QuickViewGroupElement>
+                        <QuickViewGroupElement label="Sample Collection Date" value="Thursday, May 14, 2020" type="text"></QuickViewGroupElement>
+						<QuickViewGroupElement label="Tests Conducted" value="COVID-19(Coronavirus)" type="text"></QuickViewGroupElement>
+						<QuickViewGroupElement label="Result" value="POSITIVE" type="text"></QuickViewGroupElement>
+					</elements>
+				</QuickViewGroup>
+			</groups>
+		</QuickViewPage>
+	</QuickViewCard>
+</core:FragmentDefinition>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta
+      name="Description"
+      content="This application is a non profit project solely to spread the awareness about COVID19 or Coronavirus pandenmic. The application is highly helpful for Indian citizens. It provides a covid healthcare assistant to take self assesssment test, find essential services for covid19, forum, helpline, support etc. \n Author: Shivam Shrivastav"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add to home screen for Safari on iOS -->
+    <!-- Hide Tabs and adress bar -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- hide status bar -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="COVID19 Healthcare" />
+    <link rel="apple-touch-icon" href="img/logo.png" />
+    <!-- Window rleated -->
+    <meta name="msapplication-TileImage" content="img/logo.png" />
+    <meta name="msapplication-TileColor" content="#386CC1" />
+    <!-- Statusbar Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#427CAC" />
+    <link rel="manifest" href="manifest.json" />
+    <title>COVID-19 Healthcare Assistant</title>
+    <link rel="shortcut icon" href="img/logo.png" />
+    <script async>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("sw.js").then(() => {
+            console.log("service worker successfully registered");
+          });
+        });
+      }
+    </script>
+    <script
+      id="sap-ui-bootstrap"
+      src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-async="true"
+      data-sap-ui-xx-waitForTheme="init"
+      data-sap-ui-preload="async"
+      data-sap-ui-libs="sap.m,sap.f,sap.ui.layout,sap.ui.core"
+      data-sap-ui-theme="sap_fiori_3_dark"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-xx-bindingSyntax="complex"
+      data-sap-ui-resourceroots='{"mymedicalhelpline": ""}'
+      data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+    ></script>
+
+    <link async rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- <script>
+      sap.ui.getCore().attachInit(function () {
+        new sap.m.Shell({
+          appWidthLimited: false,
+          showLogout: true,
+          logo: "img/corona_logo.png",
+          app: new sap.ui.core.ComponentContainer({
+            height: "100%",
+            name: "mymedicalhelpline",
+            width: "100%",
+          }),
+        }).placeAt("content");
+      });
+    </script> -->
+  </head>
+
+  <!-- <body class="sapUiBody" id="content"></body> -->
+  <body class="sapUiBody" id="content">
+    <div id="splash-screen">
+      <div class="splash-screen-text">Loading</div>
+      <div class="splash-screen-circle-outer"></div>
+      <div class="splash-screen-circle-inner"></div>
+    </div>
+    <div
+      data-sap-ui-component
+      data-name="mymedicalhelpline"
+      data-height="100%"
+      data-width="100%"
+      data-id="container"
+      data-settings='{"id" : "mymedicalhelpline"}'
+      style="height: 100%;"
+    ></div>
+  </body>
+</html>

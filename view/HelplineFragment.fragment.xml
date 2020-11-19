@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<VBox>
+		<!-- <MessageStrip text="Please choose an option below to get your State Govt.'s Helpline details" type="Information" showIcon="true" showCloseButton="true"/> -->
+		<ComboBox class="sapUiTinyMarginTop" change="onHelplineStateChange" showSecondaryValues="true" selectedKey="{diagnosisView>/state_key}"
+			items="{diagnosisView>/states}">
+			<items>
+				<core:ListItem key="{diagnosisView>key}" text="{diagnosisView>text}" additionalText="{diagnosisView>key}"/>
+			</items>
+		</ComboBox>
+		<l:Grid hSpacing="0" defaultSpan="XL6 L6 M6 S12">
+			<VBox visible="{= !!${diagnosisView>/state_key}}">
+				<QuickViewCard class="quickViewWidth">
+					<QuickViewPage pageId="P1" header="Government of {diagnosisView>/state_key}" icon="sap-icon://headset"
+						title="Government of {diagnosisView>/state_text}" description="Health Department {diagnosisView>/state_key} Govt.">
+						<groups>
+							<QuickViewGroup heading="State/UT Helpline Numbers">
+								<elements>
+									<QuickViewGroupElement label="Call Center Number(Toll Free)" value="1075" type="phone"></QuickViewGroupElement>
+									<QuickViewGroupElement label="Corona Control-Room Number" value="{diagnosisView>/state_phone}" type="phone"></QuickViewGroupElement>
+									<!-- <QuickViewGroupElement label="Govt. Helpline Number(Toll Free)" value="104" type="phone"></QuickViewGroupElement> -->
+									<QuickViewGroupElement label="Arogya Setu IVRS" value="1921" type="phone"></QuickViewGroupElement>
+								</elements>
+							</QuickViewGroup>
+						</groups>
+					</QuickViewPage>
+				</QuickViewCard>
+			</VBox>
+			<VBox>
+				<QuickViewCard class="quickViewWidth">
+					<QuickViewPage pageId="P1" header="Government of India" icon="img/emblem.png" title="Government of India"
+						description="Ministry of Health and Family Welfare">
+						<groups>
+							<QuickViewGroup heading="National Helpline Numbers">
+								<elements>
+									<QuickViewGroupElement label="Call Center Number" value="011-23978046" type="phone"></QuickViewGroupElement>
+									<QuickViewGroupElement label="Toll Free Number" value="107" type="phone"></QuickViewGroupElement>
+									<QuickViewGroupElement label="Helpline Email ID" value="ncov2019@gov.in" type="email"></QuickViewGroupElement>
+								</elements>
+							</QuickViewGroup>
+						</groups>
+					</QuickViewPage>
+				</QuickViewCard>
+			</VBox>
+		</l:Grid>
+	</VBox>
+</core:FragmentDefinition>

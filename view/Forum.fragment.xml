@@ -1,0 +1,96 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.f"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+	<!-- <VBox busy="{diagnosisView>/updateBusy}" busyIndicatorDelay="0" class="iframe"> -->
+	<!-- <FlexBox id="flexForumEmbeded" direction="Column" renderType="Div" class="sapUiSmallMargin" height="auto"> -->
+	<!-- <Button id="openforum" text="Launch COVID-19 Awareness Forum" press="onOpenForum"/> -->
+	<!-- <html:iframe id="forum_frame" src="https://fightcovid-19.in/" frameborder="0" height="100%" width="100%"/> -->
+	<!-- </FlexBox> -->
+	<!-- </VBox> -->
+	<VBox class="sapUiTinyMargin">
+		<Title text="COVID-19 Awareness Forum Services"/>
+		<f:GridList id="gridForumList">
+			<f:headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Button id="openforum" icon="sap-icon://feed" type="Accept" text="Launch COVID-19 Awareness Forum" press="onOpenForum"/>
+					</content>
+				</OverflowToolbar>
+			</f:headerToolbar>
+			<f:customLayout>
+				<grid:GridBoxLayout boxWidth="22.5rem"/>
+			</f:customLayout>
+			<f:GridListItem>
+				<VBox height="100%" justifyContent="SpaceBetween">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+					<GenericTile backgroundImage="img/talktoexperts.jpg" frameType="TwoByOne" press="onTalkToExperts">
+						<TileContent footer="Let's become aware about COVID-19 and clear all our doubts talking to experts.">
+							<NewsContent contentText="Talk to Experts" subheader=""/>
+						</TileContent>
+					</GenericTile>
+				</VBox>
+			</f:GridListItem>
+			<f:GridListItem>
+				<VBox height="100%" justifyContent="SpaceBetween">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+					<GenericTile backgroundImage="img/indiafights.png" frameType="TwoByOne" press="onIndiaFights">
+						<TileContent footer="Watch latest videos related to COVID-19.">
+							<NewsContent contentText="India Fights COVID-19" subheader=""/>
+						</TileContent>
+					</GenericTile>
+				</VBox>
+			</f:GridListItem>
+			<f:GridListItem>
+				<VBox height="100%" justifyContent="SpaceBetween">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+					<GenericTile backgroundImage="img/wellness.png" frameType="TwoByOne" press="onWellness">
+						<TileContent footer="Read or write posts related to Wellness.">
+							<NewsContent contentText="Wellness" subheader=""/>
+						</TileContent>
+					</GenericTile>
+				</VBox>
+			</f:GridListItem>
+			<f:GridListItem>
+				<VBox height="100%" justifyContent="SpaceBetween">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+					<GenericTile backgroundImage="img/cognize.png" frameType="TwoByOne" press="onCognize">
+						<TileContent footer="Learn about interesting facts.">
+							<NewsContent contentText="Cognize" subheader=""/>
+						</TileContent>
+					</GenericTile>
+				</VBox>
+			</f:GridListItem>
+			<f:GridListItem>
+				<VBox height="100%" justifyContent="SpaceBetween">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+					<GenericTile backgroundImage="img/worldifghts.png" frameType="TwoByOne" press="onWorldFights">
+						<TileContent footer="Watch latest videos related to COVID-19 from around the world.">
+							<NewsContent contentText="World Fights COVID-19" subheader=""/>
+						</TileContent>
+					</GenericTile>
+				</VBox>
+			</f:GridListItem>
+			<f:GridListItem>
+				<VBox height="100%" justifyContent="SpaceBetween">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+					<GenericTile backgroundImage="img/askhelp.png" frameType="TwoByOne" press="onAskForHelp">
+						<TileContent footer="If you are facing any issues, post it here, it will be addresses ASAP.">
+							<NewsContent contentText="Ask for help" subheader=""/>
+						</TileContent>
+					</GenericTile>
+				</VBox>
+			</f:GridListItem>
+		</f:GridList>
+	</VBox>
+</core:FragmentDefinition>

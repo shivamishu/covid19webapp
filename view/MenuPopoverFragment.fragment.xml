@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core">
+	<ResponsivePopover placement="Bottom" showHeader="false">
+		<f:ProductSwitch change="fnChange" tooltip="Menu">
+			<f:items>
+                <f:ProductSwitchItem src="sap-icon://stethoscope" title="COVID-19 Risk Assessment" subTitle="Self-diagnosis test" targetSrc="{targetSrc}" target="{target}"/>
+                <f:ProductSwitchItem src="sap-icon://appointment" title="Appointment" subTitle="Test appointment details" targetSrc="{targetSrc}" target="{target}"/>
+                <f:ProductSwitchItem src="sap-icon://electrocardiogram" title="Reports" subTitle="Test report status" targetSrc="{targetSrc}" target="{target}"/>
+                <f:ProductSwitchItem src="sap-icon://feed" title="COVID-19 Updates" subTitle="Coronavirus Important Updates" targetSrc="{targetSrc}" target="{target}"/>
+                <f:ProductSwitchItem src="sap-icon://outgoing-call" title="COVID-19 Helpline" subTitle="Contact details of Helpline center" targetSrc="{targetSrc}" target="{target}"/>
+                <f:ProductSwitchItem src="sap-icon://incident" title="Application Support" subTitle="Contact app support team" targetSrc="{targetSrc}" target="{target}"/>
+                <!-- <f:ProductSwitchItem src="sap-icon://customer" title="Profile" subTitle="Manage profile" targetSrc="{targetSrc}" target="{target}" visible="{= !${device>/system/desktop}}"/> -->
+			
+            </f:items>
+		</f:ProductSwitch>
+	</ResponsivePopover>
+</core:FragmentDefinition>

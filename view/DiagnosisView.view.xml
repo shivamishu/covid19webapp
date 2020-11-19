@@ -1,0 +1,94 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:fi="sap.f" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="mymedicalhelpline.controller.DiagnosisView">
+	<!-- showFooter="{= ${diagnosisView>/selectedKey} === 'DIAGNOSIS' &amp;&amp; ${diagnosisView>/showResults}}" -->
+	<Page showFooter="false" floatingFooter="true" busy="{diagnosisView>/busy}">
+		<customHeader>
+			<!-- homeIcon="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg.adapt.svg/1493030643828.svg" -->
+			<fi:ShellBar class="shellBarCustom" secondTitle="{i18n>appTitle}" notificationsNumber="2" showNotifications="false" homeIcon="img/logo.png"
+				homeIconPressed="onHomeIconPress" homeIconTooltip="{i18n>appTitle}" showCopilot="false" productSwitcherPressed="onMenuPress"
+				showProductSwitcher="false">
+				<fi:profile>
+					<fi:Avatar press="onAvatarPress"/>
+				</fi:profile>
+			</fi:ShellBar>
+		</customHeader>
+		<content>
+			<PullToRefresh id="pullToRefresh" visible="{= ${device>/support/touch} &amp;&amp; !${device>/system/desktop}}" refresh="handleRefresh"/>
+			<IconTabBar id="iconTabBar" expandable="false" select="handleIconTabBarSelect" selectedKey="{diagnosisView>/selectedKey}"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://manager" iconColor="Critical" text="Contact Traces" key="ADMIN" visible="{diagnosisView>/adminMode}">
+						<core:Fragment fragmentName="mymedicalhelpline.view.Admin" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://stethoscope" iconColor="Default" text="Self-Diagnosis" key="DIAGNOSIS">
+						<content>
+							<!-- <core:Fragment fragmentName="mymedicalhelpline.view.DiagnosisFragment" type="XML"/> -->
+							<core:Fragment fragmentName="mymedicalhelpline.view.InitialFragment" type="XML"/>
+							<core:Fragment fragmentName="mymedicalhelpline.view.DiagnosisResultsFragment" type="XML"/>
+							<VBox>
+								<!-- visible="{diagnosisView>/showResults}" -->
+								<core:Fragment fragmentName="mymedicalhelpline.view.LinksAndToDos" type="XML"/>
+							</VBox>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://map-2" iconColor="Default" text="Essentials" key="ESSENTIALS">
+						<core:Fragment fragmentName="mymedicalhelpline.view.EssentialsFragment" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://appointment" iconColor="Default" text="Appointment" key="APPOINTMENT" visible="false">
+						<content>
+							<core:Fragment fragmentName="mymedicalhelpline.view.AppointmentQuickView" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter visible="false" icon="sap-icon://electrocardiogram" iconColor="Default" text="Reports" key="REPORTS">
+						<content>
+							<core:Fragment fragmentName="mymedicalhelpline.view.ReportResultFragment" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://business-objects-experience" iconColor="Default" text="Analytics" key="UPDATES">
+						<content>
+							<core:Fragment fragmentName="mymedicalhelpline.view.Updates" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<!-- <IconTabFilter icon="sap-icon://feed" iconColor="Default" text="Forum" key="FORUM"> -->
+					<!-- <content> -->
+					<!-- <core:Fragment fragmentName="mymedicalhelpline.view.Forum" type="XML"/> -->
+					<!-- </content> -->
+					<!-- </IconTabFilter> -->
+					<IconTabFilter icon="sap-icon://outgoing-call" iconColor="Default" text="Helpline" key="CALL">
+						<content>
+							<core:Fragment fragmentName="mymedicalhelpline.view.HelplineFragment" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://incident" iconColor="Default" text="Support" key="SUPPORT">
+						<content>
+							<core:Fragment fragmentName="mymedicalhelpline.view.SupportFragment" type="XML"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<!-- visible="{= ${diagnosisView>/selectedKey} === 'DIAGNOSIS' &amp;&amp; !${diagnosisView>/showResults}}" -->
+				<!-- <Button id="address" visible="false"
+					text="Save Address" type="Default" press="handleSaveAddress" icon="sap-icon://addresses">
+						<layoutData><OverflowToolbarLayoutData priority="Low" /></layoutData>
+				</Button> -->
+				<!-- <Button id="retakesurvey" visible="{= ${diagnosisView>/selectedKey} === 'DIAGNOSIS' &amp;&amp; ${diagnosisView>/showResults}}"
+					text="Reset/Retake Risk Assessment" type="Emphasized" press="handleReTakeRiskAssessment" icon="sap-icon://refresh">
+					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+				</Button> -->
+				<!-- <Button id="survey" visible="{= ${diagnosisView>/selectedKey} === 'DIAGNOSIS' &amp;&amp; !${diagnosisView>/showResults}}"
+					text="COVID-19 Risk Assessment" type="Emphasized" press="handleRiskAssessment" icon="sap-icon://doctor">
+					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+				</Button> -->
+				<!-- <Button id="appointmentbtn"
+					visible="{= ${diagnosisView>/selectedKey} === 'DIAGNOSIS' &amp;&amp; ${diagnosisView>/showResults} &amp;&amp; (${user>/status_id} === 'HIGH' || ${user>/status_id} === 'MEDIUM')}"
+					text="Book Appointment" type="Emphasized" press="handleBookAppointmentOpen" icon="sap-icon://appointment">
+					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+				</Button> -->
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
