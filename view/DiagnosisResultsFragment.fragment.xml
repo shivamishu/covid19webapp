@@ -23,12 +23,12 @@
 		</VBox>
 		<l:Grid hSpacing="0" defaultSpan="XL6 L6 M6 S12">
 			<VBox class="sapUiTinyMarginBeginEnd">
-			<HBox class="sapUiTinyMarginTop" justifyContent="SpaceBetween">
-				<Button id="retakesurvey" class="sapUiTinyMarginTop sapUiTinyMarginBegin" visible="{diagnosisView>/showResults}"
-					text="Reset/Retake Risk Assessment" type="Emphasized" press="handleReTakeRiskAssessment" icon="sap-icon://refresh"></Button>
-				<Button id="uploadresults" class="sapUiTinyMarginTop" visible="{diagnosisView>/showResults}"
-					text="Upload Test Report" type="Emphasized" press="hanldeUploadResultOpen"></Button>
-			</HBox>	
+				<HBox class="sapUiTinyMarginTop" justifyContent="SpaceBetween">
+					<Button id="retakesurvey" class="sapUiTinyMarginTop sapUiTinyMarginBegin" visible="{diagnosisView>/showResults}"
+						text="Reset/Retake Risk Assessment" type="Emphasized" press="handleReTakeRiskAssessment" icon="sap-icon://refresh"></Button>
+					<Button id="uploadresults" class="sapUiTinyMarginTop" visible="{diagnosisView>/showResults}" text="Upload Test Report" type="Emphasized"
+						press="hanldeUploadResultOpen"></Button>
+				</HBox>
 				<List mode="None" headerText="Your COVID-19 risk assessment results:" class="sapUiSmallPaddingEnd sapUiTinyMarginBottom">
 					<items>
 						<StandardListItem visible="{= ${user>/status_id} === 'HIGH'}"
@@ -52,19 +52,15 @@
 					</items>
 				</List>
 				<!-- <VBox visible="{= !${device>/system/phone}}"> -->
-					<!-- <core:Fragment fragmentName="mymedicalhelpline.view.Figures" type="XML"/> -->
+				<!-- <core:Fragment fragmentName="mymedicalhelpline.view.Figures" type="XML"/> -->
 				<!-- </VBox> -->
 			</VBox>
 			<!-- <core:Fragment fragmentName="mymedicalhelpline.view.ContactTraces" type="XML"/> -->
-			
-			
 			<!-- <VBox visible="{device>/system/phone}"> -->
-				<core:Fragment fragmentName="mymedicalhelpline.view.Figures" type="XML"/>
-			<!-- </VBox> -->
 			<core:Fragment fragmentName="mymedicalhelpline.view.Redzones2" type="XML"/>
-				<core:Fragment fragmentName="mymedicalhelpline.view.StateCases" type="XML"/>
-			
-		
+			<core:Fragment fragmentName="mymedicalhelpline.view.Figures" type="XML"/>
+			<!-- </VBox> -->
+			<core:Fragment fragmentName="mymedicalhelpline.view.StateCases" type="XML"/>
 			<!-- TO DOS and LINKS REMOVED -->
 		</l:Grid>
 	</VBox>
