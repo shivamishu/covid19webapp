@@ -28,5 +28,5 @@ This application is completely a non-profit initiative taken by its creators and
 
 ### Author Contact Details:
 
-covid19healthcare24x7@gmail.com ,  
+covid19healthcare24x7@gmail.com ,   
 © All rights reserved.
