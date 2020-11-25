@@ -69,11 +69,11 @@ https://www.mylightningstorage.com/confirmreport
 
 
 # Local Setup  
-Clone the repository: https://github.com/shivamishu/covid19webapp.git .
-You can create an .env file with all the relevant environment variables and use your own AWS credentials to run the application.
-The application's packages could be installed by running npm i --s
-Run the server: node server.js
-Application is available on the localhost port 443.
+Clone the repository: https://github.com/shivamishu/covid19webapp.git .  
+You can create an .env file with all the relevant environment variables and use your own AWS credentials to run the application.  
+The application's packages could be installed by running npm i --s  
+Run the server: node server.js  
+Application is available on the localhost port 443.  
  
  
 ### Author Contact Details:
