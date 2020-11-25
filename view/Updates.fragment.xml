@@ -1,8 +1,38 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml">
-	<VBox busy="{diagnosisView>/updateBusy}" busyIndicatorDelay="0" class="iframe">
-		<FlexBox id="flexEmbeded" direction="Column" renderType="Div" class="sapUiSmallMargin" height="auto" width="auto">
-			<!-- <core:HTML content='&lt;div class=&quot;bingwidget&quot; data-type=&quot;covid19&quot; data-location-id=&quot;/India&quot; data-market=&quot;en-us&quot; data-language=&quot;en-us&quot;&gt;&lt;/div&gt;&lt;script src=&quot;//www.bing.com/widget/bootstrap.answer.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;' /> -->
-			<html:iframe id="bing_frame" src="https://www.bing.com/covid/local/india" frameborder="0" height="100%" width="100%"/>
-		</FlexBox>
-	</VBox>
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Button id="toggleConent" icon="sap-icon://menu" text="Toggle" press="onContentToggle" visible="{device>/system/phone}"/>
+	<l:DynamicSideContent id="DynamicSideContent" class="sapUiDSCExplored sapUiContentPadding" sideContentFallDown="BelowM"
+		sideContentPosition="Begin" containerQuery="true">
+		<VBox id="vboxtabadim">
+			<core:Fragment fragmentName="mymedicalhelpline.view.ContactTracesPublic" type="XML"/>
+			<!-- <html:iframe src="https://d9ejjjzd6egbz.cloudfront.net/tableauadmin.html" frameborder="0" style="overflow:hidden;height:200vh;width:100%" -->
+			<!-- height="200vh" width="100%"/> -->
+		</VBox>
+		<l:sideContent>
+			<VBox>
+				<!-- <core:HTML content='&lt;div class=&quot;bingwidget&quot; data-type=&quot;covid19&quot; data-location-id=&quot;/India&quot; data-market=&quot;en-us&quot; data-language=&quot;en-us&quot;&gt;&lt;/div&gt;&lt;script src=&quot;//www.bing.com/widget/bootstrap.answer.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;' /> -->
+				<!-- <html:iframe id="bing_frame" src="https://www.bing.com/covid/local/india" frameborder="0" height="100%" width="100%"/> -->
+				<!-- direction="{= ${device>/system/desktop} ? 'Row' : 'Column'}"  -->
+				<layoutData>
+					<FlexItemData growFactor="1" shrinkFactor="0"/>
+				</layoutData>
+				<GenericTile backgroundImage="img/india.png" frameType="TwoByOne" press="onIndiaAnalytics" class="sapUiSmallMargin">
+					<TileContent footer="India: Containment zones on Maps, Statistics and Trends">
+						<NewsContent contentText="COVID19 Analytics: India" subheader=""/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile backgroundImage="img/world.png" frameType="TwoByOne" press="onWorldAnalytics" class="sapUiSmallMargin">
+					<TileContent footer="Worldwide: Containment zones on Maps, Statistics and Trends">
+						<NewsContent contentText="COVID19 Analytics: Worldwide" subheader=""/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile backgroundImage="img/trace.jpg" frameType="TwoByOne" press="onAdminTraces" class="sapUiSmallMargin">
+					<TileContent footer="Contact Traces and Containment Zones">
+						<NewsContent contentText="City Containment zones" subheader=""/>
+					</TileContent>
+				</GenericTile>
+			</VBox>
+		</l:sideContent>
+	</l:DynamicSideContent>
+	<!-- <VBox id="analyticsVBox" busyIndicatorDelay="0" class="iframe"> -->
+	<!-- </VBox> -->
 </core:FragmentDefinition>

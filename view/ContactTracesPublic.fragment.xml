@@ -2,7 +2,7 @@
 	<VBox class="iframe">
 		<FlexBox direction="Column" renderType="Div" class="sapUiSmallMargin" height="auto" width="auto">
 			<!-- <core:HTML content='&lt;div class=&quot;bingwidget&quot; data-type=&quot;covid19&quot; data-location-id=&quot;/India&quot; data-market=&quot;en-us&quot; data-language=&quot;en-us&quot;&gt;&lt;/div&gt;&lt;script src=&quot;//www.bing.com/widget/bootstrap.answer.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;' /> -->
-			<html:iframe src="https://d9ejjjzd6egbz.cloudfront.net/tableauadmin.html" style="overflow:hidden;height:200vh;width:100%" frameborder="0" height="100vh" width="100%"/>
+			<html:iframe src="https://d9ejjjzd6egbz.cloudfront.net/tableaupublic.html" style="overflow:hidden;height:200vh;width:100%" frameborder="0" height="100vh" width="100%"/>
 		</FlexBox>
 	</VBox>
 </core:FragmentDefinition>
