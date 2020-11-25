@@ -27,7 +27,9 @@ Admins of the area or the company get to see the list of all the users at the ri
 This application is completely a non-profit initiative taken by its creators and does not charge for any of its services. User data is highly secured and is never shared with any 3rd party. All the other data is collected from various sources like Google, covid19india, Bing, MoH, ICMR etc.
 
  # Architecture  
- 
+   
+ ![aws p2](https://user-images.githubusercontent.com/24988178/100217206-342df300-2f39-11eb-8403-22c7d079688c.png)
+
  # APIs  
  
 https://www.mylightningstorage.com/setaddress  
