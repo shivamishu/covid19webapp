@@ -27,6 +27,9 @@ Admins of the area or the company get to see the list of all the users at the ri
 This application is completely a non-profit initiative taken by its creators and does not charge for any of its services. User data is highly secured and is never shared with any 3rd party. All the other data is collected from various sources like Google, covid19india, Bing, MoH, ICMR etc.
 
 ### Author Contact Details:
-
+#### Shivam Shrivastav
+#### Praveen Nayak
+#### Kunjan Malik
+#### Yadnyshree Savant  
 covid19healthcare24x7@gmail.com ,   
 © All rights reserved.
