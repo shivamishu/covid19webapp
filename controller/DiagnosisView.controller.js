@@ -414,7 +414,7 @@ sap.ui.define(
 				this.getModel("diagnosisView").setProperty("/busy", true);
 				window.sessionStorage;
 				var sUrl =
-					"https://covid19healthcareassistant.auth.ap-south-1.amazoncognito.com/login?client_id=7gqqlrv364d3s2oecqufv7e4is&response_type=token&scope=phone+email+openid+aws.cognito.signin.user.admin+profile&redirect_uri=http://localhost:443/";
+					"https://covid19healthcareassistant.auth.ap-south-1.amazoncognito.com/login?client_id=7gqqlrv364d3s2oecqufv7e4is&response_type=token&scope=phone+email+openid+aws.cognito.signin.user.admin+profile&redirect_uri=https://www.mylightningstorage.com/";
 				sap.m.URLHelper.redirect(sUrl, false);
 			},
 			_handleUnauthorizedAccess: function (result) {
