@@ -988,11 +988,11 @@ sap.ui.define(
 				// oRedzonesModel.setProperty("/busy", true);
 				if (!navigator.geolocation) {
 					console.log("Geolocation is not supported by the browser");
-					if (sMode === "SEARCH") {
-						MessageBox.error(
-							"Geolocation is not supported. Location services features will not be available"
-						);
-					}
+					// if (sMode === "SEARCH") {
+					// 	MessageBox.error(
+					// 		"Geolocation is not supported. Location services features will not be available"
+					// 	);
+					// }
 					// oRedzonesModel.setProperty("/busy", false);
 				} else {
 					if (oDiagnosisButton) {
@@ -1061,11 +1061,11 @@ sap.ui.define(
 					if (!bHideMsg && sMode === "ASSESSMENT") {
 						MessageBox.warning(this._oResourceBundle.getText("allowlocation"));
 					}
-					if (sMode === "SEARCH") {
-						MessageBox.error(
-							"Location access denied. Please allow Location access permissions and search again to enable this feature."
-						);
-					}
+					// if (sMode === "SEARCH") {
+					// 	MessageBox.error(
+					// 		"Location access denied. Please allow Location access permissions and search again to enable this feature."
+					// 	);
+					// }
 					console.log("Unable to retrieve your location.");
 					// oLoginViewModel.setProperty("/latitude", null);
 					// oLoginViewModel.setProperty("/longitude", null);
@@ -1108,20 +1108,21 @@ sap.ui.define(
 				}
 			},
 			_isNewCoordinate: function (lat, lng) {
-				if (lat) {
-					lat = parseFloat(lat.toFixed(4));
-				}
-				if (lng) {
-					lng = parseFloat(lng.toFixed(4));
-				}
-				if (
-					parseFloat(longitude.toFixed(4)) !== lng ||
-					parseFloat(latitude.toFixed(4)) !== lat
-				) {
-					return true; //new coordinates
-				} else {
-					return false;
-				}
+				// if (lat) {
+				// 	lat = parseFloat(lat.toFixed(4));
+				// }
+				// if (lng) {
+				// 	lng = parseFloat(lng.toFixed(4));
+				// }
+				// if (
+				// 	parseFloat(longitude.toFixed(4)) !== lng ||
+				// 	parseFloat(latitude.toFixed(4)) !== lat
+				// ) {
+				// 	return true; //new coordinates
+				// } else {
+				// 	return false;
+				// }
+				return false;
 			},
 			_setCurentLocation: function () {
 				var oDiagnosisButton = this._oView.byId("survey");
