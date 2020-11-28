@@ -36,12 +36,12 @@ function performDatabaseOperations(
 }
 function _performDBOperation(req, res, sql_query, modeText, err, token) {
   if (err) {
-    // con.end();
-    console.error("Database connection failed: " + err.stack);
-    con.destroy();
-    // res.status(400).send(err);
-    // return;
-    con = require("./dbConnection.js");
+    // // con.end();
+    // console.error("Database connection failed: " + err.stack);
+    // con.destroy();
+    // // res.status(400).send(err);
+    // // return;
+    // con = require("./dbConnection.js");
   }
   // console.log("Connected to database.");
   con.query(sql_query, function (err, result, fields) {
