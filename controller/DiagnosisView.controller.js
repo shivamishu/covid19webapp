@@ -1059,7 +1059,7 @@ sap.ui.define(
 					}
 					// oRedzonesModel.setProperty("/busy", false);
 					if (!bHideMsg && sMode === "ASSESSMENT") {
-						MessageBox.warning(this._oResourceBundle.getText("allowlocation"));
+						// MessageBox.warning(this._oResourceBundle.getText("allowlocation"));
 					}
 					// if (sMode === "SEARCH") {
 					// 	MessageBox.error(
