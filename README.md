@@ -44,7 +44,8 @@ https://www.mylightningstorage.com/contacttracelist
 https://www.mylightningstorage.com/sendnotification  
 https://www.mylightningstorage.com/confirmreport 
 
- # Screenshots  
+ # Screenshots 
+ ![Screenshot (46)](https://user-images.githubusercontent.com/24988178/100551310-a1c58080-32a5-11eb-91d5-f2d30523d1af.png)  
  
  # AWS Resources Setup
  
