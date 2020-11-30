@@ -1,18 +1,27 @@
-# COVID19 Healthcare Assistant
+COVID19 Healthcare Assistant<a name="TOP"></a>
+===================
 
-This is a progressive web app which can be installed on any device.
-Application's sole purpose is to increase the awareness amongst people about the COVID-19 infection by providing them a single platform – ‘COVID-19 Healthcare Assistant’ wherein they can make use of all the essential services, information and utilities to help fight this pandemic.
+- - - - 
+## CMPE 281 Project 2 #
+   University: [San Jose State University](http://www.sjsu.edu/)  
+    Course: [Cloud Technologies](http://info.sjsu.edu/web-dbgen/catalog/courses/CMPE281.html)  
+    Professor [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)  
+    Students:   
+              [Shivam Shrivastav](https://www.linkedin.com/in/shivam-shrivastav-0612/)  
+              [Praveen Nayak](https://www.linkedin.com/in/praveennayak86/)  
+              [Yadnyshree Savant](www.linkedin.com/in/yadnyshree-savant-3a6770ba/)  
+              [Kunjan Malik](www.linkedin.com/in/kunjan-malik-7bb533200/)  
+## Introduction
 
-# About COVID19 Healthcare Assistant
+This application's sole purpose is to spread the awareness about COVID19 or Coronavirus pandenmic. The application is currently highly helpful for Indian citizens(will be expanded to USA and other countries in future). It provides a covid healthcare assistant to take self assesssment test, find essential services for covid19, contact traces within an area, several analytical views on the current pandemic, helplines and support.
 
-This application is a non profit project solely to spread the awareness about COVID19 or Coronavirus pandenmic. The application is currently highly helpful for Indian citizens(will be expanded in future). It provides a covid healthcare assistant to take self assesssment test, find essential services for covid19, contact traces within an area, helpline, support etc.
-
-# Features: The application mainly provides below 6 essential services:
+## Features: The application mainly provides below 6 essential services:
 
 ### Risk Assessment: Custom(Free) Self-assessment Test to calculate potential health risk and our recommendations for the same. Find Nearby Containment or Hotspot zone(which is built based on the end-users risk assessment results and covid19 cases in that area). Search for any State's or City's current COVID-19 cases trends.
 Users who get the assessment result as HIGH or MEDIUM risk based on predetermined parameters get to upload the covid19 test report/result which the local admin of the area could verify and update in the database using our admin panel.
 
-### Essentials: Search for nearby essential services like COVID-19 Testing Labs, Food/Grocery/Medicine Delivery options, Wellness centers, Emergency services, Donation camps, Helplines etc. and get their contact details.
+### Essentials: Search for nearby essential services like COVID-19 Testing Labs, Food/Grocery/Medicine Delivery options, Wellness centers, Emergency services, Donation camps, Helplines etc.  
+All the above essential services could be located in a single platform. Users could search for above essenstials services and even service providers could register themselves as trusted partners oferring services. 
 
 ### Contact Tracing: Users who get the assessment result as HIGH or MEDIUM risk get to fill in the details of the other users with whom they have come in contact within a week. Thus, every user at potential risk builds up this database and thus, we perform some computations and analytics to show the possible cluster of users at risk so that they could self-isolate themselves and even get a covid19 test.
 We automatically send notification to the users at risk via email/phone to inform the potential risk associated and to take preventive measures.  
@@ -29,24 +38,8 @@ This application is completely a non-profit initiative taken by its creators and
  # Architecture  
    
  ![aws p2](https://user-images.githubusercontent.com/24988178/100217206-342df300-2f39-11eb-8403-22c7d079688c.png)
-
- # APIs  
  
-https://www.mylightningstorage.com/setaddress  
-https://www.mylightningstorage.com/setlocation  
-https://www.mylightningstorage.com/symptoms  
-https://www.mylightningstorage.com/contacttraces  
-https://www.mylightningstorage.com/containmentzones  
-https://www.mylightningstorage.com/containmentcities  
-https://www.mylightningstorage.com/containmentresults  
-https://www.mylightningstorage.com/upload_file  
-https://www.mylightningstorage.com/contacttracelist  
-https://www.mylightningstorage.com/sendnotification  
-https://www.mylightningstorage.com/confirmreport 
-
- # Screenshots  
- 
- # AWS Resources Setup
+## AWS Resources Setup
  
 ●	App is completely hosted on AWS.  
 ●	Technical Stack: NodeJS(Backend), HTML5, JavaScript. jQuery, OpenUI5, CSS etc.(Frontend).  
@@ -69,6 +62,46 @@ https://www.mylightningstorage.com/confirmreport
 ●	AI: We might add some other components as well and currently analyzing if AI could help enhance the solution.  
 ●	Used OpenUI5 with bootstrap to build UI. It is an open source Model View Controller based JavaScript Framework to build generic web applications compatible on all devices: Mobile, Tablets, Laptop, Desktop etc. For Backend, we used NodeJS framework integrated with all our AWS resources and other open source libraries.  
 
+ ## APIs  
+ 
+https://www.mylightningstorage.com/setaddress  
+https://www.mylightningstorage.com/setlocation  
+https://www.mylightningstorage.com/symptoms  
+https://www.mylightningstorage.com/contacttraces  
+https://www.mylightningstorage.com/containmentzones  
+https://www.mylightningstorage.com/containmentcities  
+https://www.mylightningstorage.com/containmentresults  
+https://www.mylightningstorage.com/upload_file  
+https://www.mylightningstorage.com/contacttracelist  
+https://www.mylightningstorage.com/sendnotification  
+https://www.mylightningstorage.com/confirmreport 
+
+# Screenshots  
+
+![Screenshot (46)](https://user-images.githubusercontent.com/24988178/100579891-049d3300-330b-11eb-9309-79088f0d5bb9.png)
+![Screenshot (47)](https://user-images.githubusercontent.com/24988178/100579897-0830ba00-330b-11eb-9894-9ec12818bb41.png)
+![Screenshot (48)](https://user-images.githubusercontent.com/24988178/100579903-09fa7d80-330b-11eb-9cb7-23fe28ab5ebc.png)
+![Screenshot (49)](https://user-images.githubusercontent.com/24988178/100579909-0bc44100-330b-11eb-91af-3e138c26897f.png)
+![Screenshot (50)](https://user-images.githubusercontent.com/24988178/100579915-0e269b00-330b-11eb-935c-58fbfc335630.png)
+![Screenshot (51)](https://user-images.githubusercontent.com/24988178/100579923-0ff05e80-330b-11eb-83f6-66620853362b.png)
+![Screenshot (52)](https://user-images.githubusercontent.com/24988178/100579930-11ba2200-330b-11eb-9be2-1998f505c89f.png)
+![Screenshot (53)](https://user-images.githubusercontent.com/24988178/100579936-1383e580-330b-11eb-8916-bc00a98f15c0.png)
+![Screenshot (54)](https://user-images.githubusercontent.com/24988178/100579938-15e63f80-330b-11eb-9d80-d8a530f5d1bf.png)
+![Screenshot (55)](https://user-images.githubusercontent.com/24988178/100579945-17b00300-330b-11eb-8c89-4561ab3e59bf.png)
+![Screenshot (55)a](https://user-images.githubusercontent.com/24988178/100579952-1979c680-330b-11eb-80a1-b4bb87c076ae.png)
+![Screenshot (56)](https://user-images.githubusercontent.com/24988178/100579958-1b438a00-330b-11eb-9575-a46db2aad1a0.png)
+![Screenshot (57)](https://user-images.githubusercontent.com/24988178/100579963-1d0d4d80-330b-11eb-87ba-a2e5eba50f77.png)
+![Screenshot (57)a](https://user-images.githubusercontent.com/24988178/100579968-1f6fa780-330b-11eb-8ba9-3849c8394252.png)
+![Screenshot (58)](https://user-images.githubusercontent.com/24988178/100579975-226a9800-330b-11eb-8259-760178d2c2a3.png)
+![Screenshot (59)](https://user-images.githubusercontent.com/24988178/100579982-25fe1f00-330b-11eb-9da9-a0dc1f50de4b.png)
+![Screenshot (60)](https://user-images.githubusercontent.com/24988178/100579986-272f4c00-330b-11eb-9a80-8555515df5c9.png)
+![Screenshot (61)](https://user-images.githubusercontent.com/24988178/100579988-28607900-330b-11eb-98eb-fb9bf5394e8c.png)
+![Screenshot (62)](https://user-images.githubusercontent.com/24988178/100579994-2ac2d300-330b-11eb-9d3a-a7f04564eb03.png)
+![Screenshot (63)](https://user-images.githubusercontent.com/24988178/100580001-2bf40000-330b-11eb-962b-320d9dc1d552.png)
+![Screenshot (64)](https://user-images.githubusercontent.com/24988178/100580008-2dbdc380-330b-11eb-891f-38dd9b63bb29.png)
+![Screenshot iphone](https://user-images.githubusercontent.com/24988178/100580015-2f878700-330b-11eb-86d1-b3f667f5093a.jpg)
+
+
 
 # Local Setup  
 Clone the repository: https://github.com/shivamishu/covid19webapp.git .  
@@ -83,5 +116,6 @@ Application is available on the localhost port 443.
 #### Praveen Nayak
 #### Kunjan Malik
 #### Yadnyshree Savant  
+
 covid19healthcare24x7@gmail.com ,   
 © All rights reserved.
