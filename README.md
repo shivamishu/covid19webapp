@@ -11,16 +11,11 @@ COVID19 Healthcare Assistant<a name="TOP"></a>
               [Praveen Nayak]()  
               [Yadnyshree Savant]()  
               [Kunjan Malik]()  
-# COVID19 Healthcare Assistant
+## Introduction
 
-This is a progressive web app which can be installed on any device.
-Application's sole purpose is to increase the awareness amongst people about the COVID-19 infection by providing them a single platform – ‘COVID-19 Healthcare Assistant’ wherein they can make use of all the essential services, information and utilities to help fight this pandemic.
+This application's sole purpose is to spread the awareness about COVID19 or Coronavirus pandenmic. The application is currently highly helpful for Indian citizens(will be expanded to USA and other countries in future). It provides a covid healthcare assistant to take self assesssment test, find essential services for covid19, contact traces within an area, several analytical views on the current pandemic, helplines and support.
 
-# About COVID19 Healthcare Assistant
-
-This application is a non profit project solely to spread the awareness about COVID19 or Coronavirus pandenmic. The application is currently highly helpful for Indian citizens(will be expanded in future). It provides a covid healthcare assistant to take self assesssment test, find essential services for covid19, contact traces within an area, helpline, support etc.
-
-# Features: The application mainly provides below 6 essential services:
+## Features: The application mainly provides below 6 essential services:
 
 ### Risk Assessment: Custom(Free) Self-assessment Test to calculate potential health risk and our recommendations for the same. Find Nearby Containment or Hotspot zone(which is built based on the end-users risk assessment results and covid19 cases in that area). Search for any State's or City's current COVID-19 cases trends.
 Users who get the assessment result as HIGH or MEDIUM risk based on predetermined parameters get to upload the covid19 test report/result which the local admin of the area could verify and update in the database using our admin panel.
@@ -42,22 +37,8 @@ This application is completely a non-profit initiative taken by its creators and
  # Architecture  
    
  ![aws p2](https://user-images.githubusercontent.com/24988178/100217206-342df300-2f39-11eb-8403-22c7d079688c.png)
-
- # APIs  
  
-https://www.mylightningstorage.com/setaddress  
-https://www.mylightningstorage.com/setlocation  
-https://www.mylightningstorage.com/symptoms  
-https://www.mylightningstorage.com/contacttraces  
-https://www.mylightningstorage.com/containmentzones  
-https://www.mylightningstorage.com/containmentcities  
-https://www.mylightningstorage.com/containmentresults  
-https://www.mylightningstorage.com/upload_file  
-https://www.mylightningstorage.com/contacttracelist  
-https://www.mylightningstorage.com/sendnotification  
-https://www.mylightningstorage.com/confirmreport 
- 
- # AWS Resources Setup
+## AWS Resources Setup
  
 ●	App is completely hosted on AWS.  
 ●	Technical Stack: NodeJS(Backend), HTML5, JavaScript. jQuery, OpenUI5, CSS etc.(Frontend).  
@@ -80,7 +61,21 @@ https://www.mylightningstorage.com/confirmreport
 ●	AI: We might add some other components as well and currently analyzing if AI could help enhance the solution.  
 ●	Used OpenUI5 with bootstrap to build UI. It is an open source Model View Controller based JavaScript Framework to build generic web applications compatible on all devices: Mobile, Tablets, Laptop, Desktop etc. For Backend, we used NodeJS framework integrated with all our AWS resources and other open source libraries.  
 
- # Screenshots
+ ## APIs  
+ 
+https://www.mylightningstorage.com/setaddress  
+https://www.mylightningstorage.com/setlocation  
+https://www.mylightningstorage.com/symptoms  
+https://www.mylightningstorage.com/contacttraces  
+https://www.mylightningstorage.com/containmentzones  
+https://www.mylightningstorage.com/containmentcities  
+https://www.mylightningstorage.com/containmentresults  
+https://www.mylightningstorage.com/upload_file  
+https://www.mylightningstorage.com/contacttracelist  
+https://www.mylightningstorage.com/sendnotification  
+https://www.mylightningstorage.com/confirmreport 
+
+# Screenshots  
 
 ![Screenshot (46)](https://user-images.githubusercontent.com/24988178/100579891-049d3300-330b-11eb-9309-79088f0d5bb9.png)
 ![Screenshot (47)](https://user-images.githubusercontent.com/24988178/100579897-0830ba00-330b-11eb-9894-9ec12818bb41.png)
@@ -120,5 +115,6 @@ Application is available on the localhost port 443.
 #### Praveen Nayak
 #### Kunjan Malik
 #### Yadnyshree Savant  
+
 covid19healthcare24x7@gmail.com ,   
 © All rights reserved.
