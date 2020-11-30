@@ -20,7 +20,8 @@ This application's sole purpose is to spread the awareness about COVID19 or Coro
 ### Risk Assessment: Custom(Free) Self-assessment Test to calculate potential health risk and our recommendations for the same. Find Nearby Containment or Hotspot zone(which is built based on the end-users risk assessment results and covid19 cases in that area). Search for any State's or City's current COVID-19 cases trends.
 Users who get the assessment result as HIGH or MEDIUM risk based on predetermined parameters get to upload the covid19 test report/result which the local admin of the area could verify and update in the database using our admin panel.
 
-### Essentials: Search for nearby essential services like COVID-19 Testing Labs, Food/Grocery/Medicine Delivery options, Wellness centers, Emergency services, Donation camps, Helplines etc. and get their contact details.
+### Essentials: Search for nearby essential services like COVID-19 Testing Labs, Food/Grocery/Medicine Delivery options, Wellness centers, Emergency services, Donation camps, Helplines etc.  
+All the above essential services could be located in a single platform. Users could search for above essenstials services and even service providers could register themselves as trusted partners oferring services. 
 
 ### Contact Tracing: Users who get the assessment result as HIGH or MEDIUM risk get to fill in the details of the other users with whom they have come in contact within a week. Thus, every user at potential risk builds up this database and thus, we perform some computations and analytics to show the possible cluster of users at risk so that they could self-isolate themselves and even get a covid19 test.
 We automatically send notification to the users at risk via email/phone to inform the potential risk associated and to take preventive measures.  
