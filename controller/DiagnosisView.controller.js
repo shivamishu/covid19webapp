@@ -414,7 +414,7 @@ sap.ui.define(
 				this.getModel("diagnosisView").setProperty("/busy", true);
 				window.sessionStorage;
 				var sUrl =
-					"https://covid19healthcareassistant.auth.ap-south-1.amazoncognito.com/login?client_id=7gqqlrv364d3s2oecqufv7e4is&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://www.mylightningstorage.com/";
+					"https://covid19healthcareassistant.auth.ap-south-1.amazoncognito.com/login?client_id=7gqqlrv364d3s2oecqufv7e4is&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=http://localhost:443/";
 				sap.m.URLHelper.redirect(sUrl, false);
 			},
 			_handleUnauthorizedAccess: function (result) {
@@ -1303,6 +1303,7 @@ sap.ui.define(
 					data: JSON.stringify(aContactList),
 					dataType: "json",
 					success: function (result) {
+						this._handleContainmentCitiesFetch();
 						console.log("contacts saved successfully");
 						// if (result.code === 200) {
 						this.getModel("diagnosisView").setProperty("/showResults", true);
@@ -1613,7 +1614,7 @@ sap.ui.define(
 								state: "Online / Maharashtra / M.P.",
 							},
 						};
-						data.features.unshift(defaultItem);
+						data.features.push(defaultItem);
 						defaultItem = {
 							geometry: {
 								type: "Point",
@@ -1634,7 +1635,7 @@ sap.ui.define(
 								state: "Online / Delhi / NCR",
 							},
 						};
-						data.features.unshift(defaultItem);
+						data.features.push(defaultItem);
 						data.features.forEach(function (item) {
 							if (!aUniqueCategories[item.properties.icon]) {
 								aUniqueCategories[item.properties.icon] = true;
@@ -1684,7 +1685,7 @@ sap.ui.define(
 								state: "Maharashtra",
 							},
 						};
-						data.features.unshift(defaultItem);
+						data.features.push(defaultItem);
 						defaultItem = {
 							geometry: {
 								type: "Point",
@@ -1705,7 +1706,7 @@ sap.ui.define(
 								state: "Delhi / NCR",
 							},
 						};
-						data.features.unshift(defaultItem);
+						data.features.push(defaultItem);
 						data.features.forEach(function (item) {
 							if (!aUniqueCategories[item.properties.icon]) {
 								aUniqueCategories[item.properties.icon] = true;
@@ -2778,7 +2779,7 @@ sap.ui.define(
 						.getBindingContext("adminModel")
 						.getObject().mobile_no,
 				};
-				return;
+				// return;
 				$.ajax({
 					type: "POST",
 					contentType: "application/json",
