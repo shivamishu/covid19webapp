@@ -67,27 +67,9 @@ https://www.mylightningstorage.com/confirmreport
 ●	AI: We might add some other components as well and currently analyzing if AI could help enhance the solution.  
 ●	Used OpenUI5 with bootstrap to build UI. It is an open source Model View Controller based JavaScript Framework to build generic web applications compatible on all devices: Mobile, Tablets, Laptop, Desktop etc. For Backend, we used NodeJS framework integrated with all our AWS resources and other open source libraries.  
 
- # Screenshots 
- ![Screenshot (46)](https://user-images.githubusercontent.com/24988178/100551310-a1c58080-32a5-11eb-91d5-f2d30523d1af.png)  
-![Screenshot (47)](https://user-images.githubusercontent.com/24988178/100578649-bedf6b00-3308-11eb-82fb-30dfcb647da6.png)
-![Screenshot (48)](https://user-images.githubusercontent.com/24988178/100578653-c1da5b80-3308-11eb-8b88-037bf682b55d.png)
-![Screenshot (49)](https://user-images.githubusercontent.com/24988178/100578656-c30b8880-3308-11eb-975d-37e9138b5617.png)
-![Screenshot (50)](https://user-images.githubusercontent.com/24988178/100578659-c4d54c00-3308-11eb-86ae-ac3a5f4669fd.png)
-![Screenshot (51)](https://user-images.githubusercontent.com/24988178/100578664-c6067900-3308-11eb-9ed7-340948f20826.png)
-![Screenshot (52)](https://user-images.githubusercontent.com/24988178/100578667-c7d03c80-3308-11eb-9c0a-c2262a4c3c81.png)
-![Screenshot (53)](https://user-images.githubusercontent.com/24988178/100578670-c9016980-3308-11eb-87ae-33517c305ae9.png)
-![Screenshot (54)](https://user-images.githubusercontent.com/24988178/100578671-cacb2d00-3308-11eb-847e-58fc8f928a4c.png)
-![Screenshot (55)](https://user-images.githubusercontent.com/24988178/100578678-cbfc5a00-3308-11eb-952f-3c7e3a182c08.png)
-![Screenshot (56)](https://user-images.githubusercontent.com/24988178/100578684-cdc61d80-3308-11eb-898c-3ffbb850e87c.png)
-![Screenshot (57)](https://user-images.githubusercontent.com/24988178/100578691-cef74a80-3308-11eb-96bb-e641e0b0039c.png)
-![Screenshot (58)](https://user-images.githubusercontent.com/24988178/100578697-d0c10e00-3308-11eb-93b1-754aaf0be720.png)
-![Screenshot (59)](https://user-images.githubusercontent.com/24988178/100578705-d3236800-3308-11eb-880c-062937fcb683.png)
-![Screenshot (60)](https://user-images.githubusercontent.com/24988178/100578707-d4549500-3308-11eb-8e9a-fa1deeba133a.png)
-![Screenshot (61)](https://user-images.githubusercontent.com/24988178/100578709-d4ed2b80-3308-11eb-8711-36ac4a6d5a09.png)
-![Screenshot (62)](https://user-images.githubusercontent.com/24988178/100578711-d6b6ef00-3308-11eb-9dd1-087734033fb7.png)
-![Screenshot (63)](https://user-images.githubusercontent.com/24988178/100578713-d74f8580-3308-11eb-9910-0ff67fe2caee.png)
-![Screenshot (64)](https://user-images.githubusercontent.com/24988178/100578718-d9194900-3308-11eb-8fc7-ae401e54dae6.png)
-![Screenshot (65)](https://user-images.githubusercontent.com/24988178/100578719-da4a7600-3308-11eb-8e3c-07c00465e440.png)  
+ # Screenshots
+
+
 
 
 # Local Setup  
