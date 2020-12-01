@@ -11,7 +11,9 @@ COVID19 Healthcare Assistant<a name="TOP"></a>
               [Praveen Nayak](https://www.linkedin.com/in/praveennayak86/)  
               [Yadnyshree Savant](www.linkedin.com/in/yadnyshree-savant-3a6770ba/)  
               [Kunjan Malik](www.linkedin.com/in/kunjan-malik-7bb533200/)  
-    [Application URL](https://covid19healthcare.cfapps.us10.hana.ondemand.com/#)
+                
+              
+   Application: [URL](https://covid19healthcare.cfapps.us10.hana.ondemand.com/#)
 ## Introduction
 
 This application's sole purpose is to spread the awareness about COVID19 or Coronavirus pandenmic. The application is currently highly helpful for Indian citizens(will be expanded to USA and other countries in future). It provides a covid healthcare assistant to take self assesssment test, find essential services for covid19, contact traces within an area, several analytical views on the current pandemic, helplines and support.
