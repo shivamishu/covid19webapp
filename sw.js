@@ -1,8 +1,4 @@
-// importScripts("../Component-preload.js");
 
-// self.worker.initFromManifest().then(() => {
-//     console.log("successfully initialized manifest");
-// });
 const CACHE_NAME = "covid19-ui5-v2.2.2";
 let RESOURCES_TO_PRELOAD = [
 	"index.html",
