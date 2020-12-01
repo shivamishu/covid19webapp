@@ -12,7 +12,8 @@ describe('Get the containment cities', () => {
             latitude: null,
             longitide: null
         }
-        chai.request('http://localhost:443/api').post('/containmentcities').send(data).end((err, res) => {
+       
+        chai.request('https://covid19healthcare.cfapps.us10.hana.ondemand.com/api').post('/containmentcities').send(data).end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object');
             res.body.cities.length.should.be.eql(3);
