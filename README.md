@@ -64,17 +64,18 @@ This application is completely a non-profit initiative taken by its creators and
 
  ## APIs  
  
-https://www.mylightningstorage.com/setaddress  
-https://www.mylightningstorage.com/setlocation  
-https://www.mylightningstorage.com/symptoms  
-https://www.mylightningstorage.com/contacttraces  
-https://www.mylightningstorage.com/containmentzones  
-https://www.mylightningstorage.com/containmentcities  
-https://www.mylightningstorage.com/containmentresults  
-https://www.mylightningstorage.com/upload_file  
-https://www.mylightningstorage.com/contacttracelist  
-https://www.mylightningstorage.com/sendnotification  
-https://www.mylightningstorage.com/confirmreport 
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/setaddress 
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/setlocation  
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/symptoms  
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/contacttraces  
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/containmentzones  
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/containmentcities  
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/containmentresults  
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/upload_file 
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/contacttracelist  
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/sendnotification 
+https://covid19healthcare.cfapps.us10.hana.ondemand.com/api/confirmreport 
+
 
 # Screenshots  
 
