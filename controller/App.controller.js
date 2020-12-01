@@ -29,10 +29,7 @@ sap.ui.define([
 			// // apply content density mode to root view
 			// this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
 		},
-		// onAfterRendering: function () {
-		// 	// this.getView().byId("idAppControl").setBusy(false);
-		// 	$("#splash-screen").remove();
-		// },
+	
 
 		onExit: function () {
 			// exit
