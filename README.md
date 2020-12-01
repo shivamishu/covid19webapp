@@ -11,6 +11,7 @@ COVID19 Healthcare Assistant<a name="TOP"></a>
               [Praveen Nayak](https://www.linkedin.com/in/praveennayak86/)  
               [Yadnyshree Savant](www.linkedin.com/in/yadnyshree-savant-3a6770ba/)  
               [Kunjan Malik](www.linkedin.com/in/kunjan-malik-7bb533200/)  
+    [Application URL](https://covid19healthcare.cfapps.us10.hana.ondemand.com/#)
 ## Introduction
 
 This application's sole purpose is to spread the awareness about COVID19 or Coronavirus pandenmic. The application is currently highly helpful for Indian citizens(will be expanded to USA and other countries in future). It provides a covid healthcare assistant to take self assesssment test, find essential services for covid19, contact traces within an area, several analytical views on the current pandemic, helplines and support.
@@ -52,8 +53,8 @@ This application is completely a non-profit initiative taken by its creators and
 ●	Cross Region Data Replication: To implement DR, we have used Data Replication of S3 to have Cross Region Replication accommodating fault tolerance. We could also use Disaster Recovery for fault tolerance.  
 ●	CloudFront: We used Amazon CloudFront to reduce the unnecessary traffic back to S3 origin to help improve latency as well as reduce load on the origin. It caches our content and provides faster access globally. Admins could easily access user reports for verifications.  
 ●	Transfer Acceleration for S3 Bucket: Transfer Acceleration will take advantage of its globally distributed edge locations. When the data arrives at the nearest edge location, it is routed to automatically internally by Amazon S3 over an optimized network path.  
-●	RDS: All the user database is stored here and connected to Tableau for analytics. Currently using RDS on MySQL engine. We could consider using Amazon Aurora in the future. 
-●	Route 53: TO BE REGISTERED.  
+●	RDS: All the user database is stored here and connected to Tableau for analytics. Currently using RDS on MySQL engine. We could consider using Amazon Aurora in the future.   
+●	Route 53: Registered our domain on Route53 and configured the hosted zones and created records and added record names with various routing policies using dual stack load balancer redirecting all traffic to HTTPS(installed SSL certificates using Certificate Manager).  
 ●	CloudWatch: It is used to log and monitor the auto scaling, EC2, DynamoDB S3 bucket logs etc using Lambda triggers with SNS.  
 ●	Lambda: We invoke a Lambda function whenever a user uploads the covid19 test result report to S3, log this in CloudWatch using SNS topic and send notifications to potential users at risk(if result is POSITIVE).  
 ●	SNS: It is used for sending various above notifications using messages, emails and logs.  
