@@ -11,7 +11,7 @@ describe('Get containment zone results', () => {
         let data = {
             city: "Bangalore"
         }
-        chai.request('http://localhost:443/api').post('/containmentresults').send(data).end((err, res) => {
+        chai.request('https://covid19healthcare.cfapps.us10.hana.ondemand.com/api').post('/containmentresults').send(data).end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object');
             res.body.cityResults.length.should.be.greaterThan(9);
