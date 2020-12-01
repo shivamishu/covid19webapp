@@ -148,6 +148,8 @@ exports.sendnotification = async function (req, res) {
       res.send({ status: 400, success: "Error Occured" });
     });
 };
+
+
 exports.confirmreport = async function (req, res) {
   const mobile_no = req.body.mobile_no;
   const covid_result = req.body.covid_result;
