@@ -27,15 +27,6 @@ app.use(bodyParser.json());
 // Allow cross origin requests
 app.use(cors());
 var router = express.Router();
-// router.use(function (req, res, next) {
-//     console.log(req.path);
-//     console.log(JSON.stringify(req.headers));
-//     if (req.path === "/login" || req.path === "/register" || req.path === "/forgot") {
-//         next();
-//     } else {
-
-//     }
-// });
 // test route
 router.get("/", function (req, res) {
   console.log("default route called");
