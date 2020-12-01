@@ -35,10 +35,7 @@ exports.register = async function (req, res) {
 		TableName: "users",
 		Item: input,
 		ConditionExpression: "attribute_not_exists(mobile_no)",
-		// ConditionExpression: "mobile_no <> :mobileKeyVal",
-		// ExpressionAttributeValues: {
-		//     ":mobileKeyVal": req.body.mobile_no
-		// }
+		
 	};
 	docClient.put(params, function (err, data) {
 
