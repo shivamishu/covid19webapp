@@ -26,7 +26,7 @@ describe('Set address', () => {
 
 
         }
-        chai.request('http://localhost:443/api').post('/setaddress').send(data).end((err, res) => {
+        chai.request('https://covid19healthcare.cfapps.us10.hana.ondemand.com/api').post('/setaddress').send(data).end((err, res) => {
             res.should.have.status(200);
            	token = res.body.token;
             done();
@@ -50,7 +50,7 @@ describe('Get symptoms', () => {
            mobile_no:9028747566
             
         }
-        chai.request('http://localhost:443/api').post('/symptoms').set("Authorization", "Bearer " + token).send(data).end((err, res) => {
+        chai.request('https://covid19healthcare.cfapps.us10.hana.ondemand.com/api').post('/symptoms').set("Authorization", "Bearer " + token).send(data).end((err, res) => {
             res.should.have.status(200);
             done();
         });
@@ -65,7 +65,7 @@ describe('Contact traces ', () => {
            contact_number:2222222229,
            contact_address:"delhi"         
         }
-        chai.request('http://localhost:443/api').post('/contacttraces').set("Authorization", "Bearer " + token).send(data).end((err, res) => {
+        chai.request('https://covid19healthcare.cfapps.us10.hana.ondemand.com/api').post('/contacttraces').set("Authorization", "Bearer " + token).send(data).end((err, res) => {
             res.should.have.status(200);
             done();
         });
