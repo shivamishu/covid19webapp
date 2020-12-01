@@ -10,13 +10,7 @@ const s3 = new AWS.S3({
   endpoint: "https://" + process.env.AWS_S3_BUCKET + ".s3.amazonaws.com",
 });
 var request = require("request");
-// let awsConfig = {
-//   region: process.env.AWS_REGION,
-//   //   endpoint: process.env.AWS_ENDPOINT,
-//   accessKeyId: process.env.AWS_API_ID,
-//   secretAccessKey: process.env.AWS_API_KEY,
-// };
-// AWS.config.update(awsConfig);
+
 function performDatabaseOperations(
   req,
   res,
@@ -28,20 +22,14 @@ function performDatabaseOperations(
   if (con.state === "connected" || con.state === "authenticated") {
     _performDBOperation(req, res, sql_query, modeText, null, token);
   } else {
-    // con = require("./dbConnection.js");
-    // con.connect(function (err) {
+    
     _performDBOperation(req, res, sql_query, modeText, null, token);
-    // });
+    
   }
 }
 function _performDBOperation(req, res, sql_query, modeText, err, token) {
   if (err) {
-    // // con.end();
-    // console.error("Database connection failed: " + err.stack);
-    // con.destroy();
-    // // res.status(400).send(err);
-    // // return;
-    // con = require("./dbConnection.js");
+    
   }
   // console.log("Connected to database.");
   con.query(sql_query, function (err, result, fields) {
@@ -83,9 +71,9 @@ function _performDBOperation(req, res, sql_query, modeText, err, token) {
           msg = "default success";
           break;
       }
-      // con.end();
+     
     }
-    // con.end();
+   
   });
 }
 exports.setaddress = async function (req, res) {
