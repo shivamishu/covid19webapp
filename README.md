@@ -1,14 +1,7 @@
 COVID19 Healthcare Assistant<a name="TOP"></a>
 ===================
-
-- - - - 
-## CMPE 281 Project 2 #
-   University: [San Jose State University](http://www.sjsu.edu/)  
-    Course: [Cloud Technologies](http://info.sjsu.edu/web-dbgen/catalog/courses/CMPE281.html)  
-    Professor [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)    
-                
-              
-   Application: [URL](https://covid19healthcare.cfapps.us10.hana.ondemand.com/#)
+      
+Application: [URL](https://covid19healthcare.cfapps.us10.hana.ondemand.com/#)
 ## Introduction
 
 This application's sole purpose is to spread the awareness about COVID19 or Coronavirus pandenmic. The application is currently highly helpful for Indian citizens(will be expanded to USA and other countries in future). It provides a covid healthcare assistant to take self assesssment test, find essential services for covid19, contact traces within an area, several analytical views on the current pandemic, helplines and support.
