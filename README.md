@@ -5,12 +5,7 @@ COVID19 Healthcare Assistant<a name="TOP"></a>
 ## CMPE 281 Project 2 #
    University: [San Jose State University](http://www.sjsu.edu/)  
     Course: [Cloud Technologies](http://info.sjsu.edu/web-dbgen/catalog/courses/CMPE281.html)  
-    Professor [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)  
-    Students:   
-              [Shivam Shrivastav](https://www.linkedin.com/in/shivam-shrivastav-0612/)  
-              [Praveen Nayak](https://www.linkedin.com/in/praveennayak86/)  
-              [Yadnyshree Savant](www.linkedin.com/in/yadnyshree-savant-3a6770ba/)  
-              [Kunjan Malik](www.linkedin.com/in/kunjan-malik-7bb533200/)  
+    Professor [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)    
                 
               
    Application: [URL](https://covid19healthcare.cfapps.us10.hana.ondemand.com/#)
