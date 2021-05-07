@@ -105,9 +105,6 @@ Application is available on the localhost port 443.
  
 ### Author Contact Details:
 #### Shivam Shrivastav
-#### Praveen Nayak
-#### Kunjan Malik
-#### Yadnyshree Savant  
-
+shivam.ishu@gmail.com
 covid19healthcare24x7@gmail.com ,   
 © All rights reserved.
